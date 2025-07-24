@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--<data>
+
+        <variable
+            name="assetView"
+            type="com.zebra.demo.viewmodel.AssetViewViewModel" />
+    </data>
+-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+
+            android:id="@+id/header_rlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+                <RelativeLayout
+                    android:id="@+id/sub_header_rlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    >
+
+                    <RelativeLayout
+                        android:id="@+id/ewrp_employee"
+                        style="@style/EditControlWrapperStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/elbl_employee"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_toStartOf="@id/rfid_img"
+                            android:layout_marginEnd="10dp"
+                            android:layout_width="match_parent"
+                            app:endIconMode="custom"
+                            app:endIconDrawable="@drawable/ic_clear"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                                android:id="@+id/ectl_employee"
+                                style="@style/AutoCompleteEmpVerifyTextViewStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/employee_name_code"
+                                android:text="" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/rfid_img"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_rfid_black"
+                            />
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_marginTop="8dp"
+                        android:id="@+id/row1_llay"
+                        android:layout_below="@+id/ewrp_employee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_emp_code_txt"
+                                style="@style/TitleViewItemEmpValidationTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/employee_code" />
+
+                            <TextView
+                                android:id="@+id/val_emp_code_txt"
+                                style="@style/ValueViewItemEmpValidationTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_emp_code_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_emp_name_txt"
+                                style="@style/TitleViewItemEmpValidationTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/employee_name" />
+
+                            <TextView
+                                android:id="@+id/val_emp_name_txt"
+                                style="@style/ValueViewItemEmpValidationTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_emp_name_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row2_llay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row1_llay"
+                        android:layout_marginTop="8dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_department_code_txt"
+                                style="@style/TitleViewItemEmpValidationTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/department_code" />
+
+                            <TextView
+                                android:id="@+id/val_department_code_txt"
+                                style="@style/ValueViewItemEmpValidationTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_department_code_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_department_name_txt"
+                                style="@style/TitleViewItemEmpValidationTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/department_name" />
+
+                            <TextView
+                                android:id="@+id/val_department_name_txt"
+                                style="@style/ValueViewItemEmpValidationTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_department_name_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/row15_llay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row2_llay"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_tag_id_txt"
+                                style="@style/TitleViewItemEmpValidationTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/tag_id" />
+
+                            <TextView
+                                android:id="@+id/val_tag_id_txt"
+                                style="@style/ValueViewItemEmpValidationTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_tag_id_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_tag_scan_count_txt"
+                                style="@style/TitleViewItemEmpValidationTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/tag_scanned_count" />
+
+                            <TextView
+                                android:id="@+id/val_total_tag_scanned"
+                                style="@style/ValueViewItemEmpValidationTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_tag_scan_count_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            <View
+                android:layout_below="@+id/sub_header_rlay"
+                android:layout_width="match_parent"
+                android:background="@color/gray"
+                android:layout_height="1dp"/>
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rview"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:layout_above="@+id/btn_bottom_llay"
+            android:layout_below="@+id/header_rlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+        <!-- <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:scrollbars="horizontal"
+            android:layout_width="match_parent"
+            android:layout_above="@+id/btn_bottom_llay"
+            android:layout_below="@+id/header_rlay"
+            android:layout_height="wrap_content"
+            android:padding="5dp"/>
+
+        <GridView
+            android:visibility="gone"
+            android:id="@+id/gridView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="4"
+            android:layout_above="@+id/btn_bottom_llay"
+            android:layout_below="@+id/header_rlay"
+            android:verticalSpacing="1dp"
+            android:horizontalSpacing="1dp"
+            android:stretchMode="columnWidth"
+            android:gravity="center"/>-->
+
+        <LinearLayout
+            android:id="@+id/grid_headder_llay"
+            android:background="@color/gray"
+            android:padding="5dp"
+            android:layout_below="@+id/header_rlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                style="@style/GridTitleListItemEmpVerifyTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="center_horizontal"
+                android:text="@string/s_no" />
+
+            <TextView
+                style="@style/GridTitleListItemEmpVerifyTextStyle"
+                android:layout_width="0dp"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/asset_name" />
+
+            <TextView
+                style="@style/GridTitleListItemEmpVerifyTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:gravity="center_horizontal"
+                android:text="@string/assigned_to" />
+
+            <TextView
+                style="@style/GridTitleListItemEmpVerifyTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="@string/assigned_to_code" />
+
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btn_bottom_llay"
+            android:layout_below="@+id/grid_headder_llay">
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                 />
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/rlt_atvty_progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/pbr_atvty_progress"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:indeterminateTint="@color/app_color" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_bottom_llay"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp">
+
+            <LinearLayout
+                android:visibility="visible"
+                android:id="@+id/scan_btn_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRFID"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="@string/scan_rfid"
+                        android:textSize="12sp"
+                        android:theme="@style/SaveButtonStyle"
+                        app:cornerRadius="30dp"
+                        app:icon="@drawable/ic_rfid"
+                        app:rippleColor="@color/rippleColor" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:background="@color/white"
+                android:id="@+id/submit_rlay"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/ewrp_remarks"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_remarks"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/ectl_remarks"
+                            style="@style/SingleLineEditTextStyle"
+                            android:inputType="textMultiLine"
+                            android:lines="2"
+                            android:gravity="top"
+                            android:text=""
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/remarks"
+                            />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_below="@+id/ewrp_remarks"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSubmit"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="@string/submit"
+                        android:textSize="14sp"
+                        android:theme="@style/SaveButtonStyle"
+                        app:cornerRadius="30dp"
+                        app:rippleColor="@color/rippleColor" />
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancel"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="7dp"
+                        android:layout_weight="1"
+                        android:minWidth="200dp"
+                        android:text="@string/cancel"
+                        android:textSize="14sp"
+                        android:theme="@style/SecondaryButtonStyle"
+                        app:cornerRadius="30dp"
+                        app:rippleColor="@color/secondaryColor" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                app:title="@string/asset_outward"
+                app:titleTextColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/app_color">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>-->
+
+        <!-- android:id="@+id/scan_barcode_qr_rlay" -->
+        <RelativeLayout
+            android:layout_below="@+id/appbar_layout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBarcode"
+                app:icon="@drawable/ic_barcode"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_height="60dp"
+                android:text="@string/scan_barcode_qr_code"
+                android:textSize="14sp"
+                android:theme="@style/SaveButtonStyle"
+                app:cornerRadius="30dp"
+                app:rippleColor="@color/rippleColor"/>
+
+        </RelativeLayout>
+        <!--            android:layout_below="@+id/appbar_layout"
+-->
+
+        <RelativeLayout
+            android:id="@+id/ewrp_gatepassno"
+            style="@style/EditControlWrapperStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/elbl_gatepassno"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_toStartOf="@id/barcode_img"
+                android:layout_marginBottom="10dp"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="match_parent"
+                app:endIconDrawable="@drawable/ic_search"
+                app:endIconMode="custom"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ectl_gatepassno"
+                    style="@style/SingleLineEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:imeOptions="actionSearch"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/gate_pass_no"
+                    android:text="" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <ImageView
+                android:layout_marginEnd="15dp"
+                android:id="@+id/barcode_img"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_barcode_black"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/ewrp_gatepassno"
+            android:id="@+id/row1_llay"
+            android:layout_width="match_parent"
+            android:baselineAligned="false"
+            android:visibility="gone"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginEnd="10dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/lbl_sno_txt"
+                    android:text="@string/system_quantity"
+                    android:layout_centerHorizontal="true"
+                    style="@style/TitleViewItemTextStyle"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_below="@+id/lbl_sno_txt"
+                    android:id="@+id/val_sno_txt"
+                    android:text="0"
+                    android:layout_centerHorizontal="true"
+                    style="@style/ValueViewItemTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginEnd="10dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/lbl_asset_code_txt"
+                    android:text="@string/scanned_quantity"
+                    android:layout_centerHorizontal="true"
+                    style="@style/TitleViewItemTextStyle"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_below="@+id/lbl_asset_code_txt"
+                    android:id="@+id/val_asset_code_txt"
+                    android:text="0"
+                    android:layout_centerHorizontal="true"
+                    style="@style/ValueViewItemTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rview"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_above="@+id/submit_rlay"
+            android:layout_below="@+id/row1_llay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/submit_rlay"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="@string/submit"
+                    android:textSize="14sp"
+                    android:theme="@style/SaveButtonStyle"
+                    app:cornerRadius="30dp"
+                    app:rippleColor="@color/rippleColor"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginStart="5dp"
+                android:layout_height="wrap_content">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnScanBarcode"
+                    android:layout_width="match_parent"
+                    app:icon="@drawable/ic_rfid"
+                    android:layout_height="60dp"
+                    android:text="Barcode"
+                    android:textSize="14sp"
+                    android:theme="@style/SaveButtonStyle"
+                    app:cornerRadius="30dp"
+                    app:rippleColor="@color/rippleColor"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginStart="5dp"
+                android:layout_height="wrap_content">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRFID"
+                    android:layout_width="match_parent"
+                    app:icon="@drawable/ic_rfid"
+                    android:layout_height="60dp"
+                    android:text="RFID"
+                    android:textSize="14sp"
+                    android:theme="@style/SaveButtonStyle"
+                    app:cornerRadius="30dp"
+                    app:rippleColor="@color/rippleColor"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <!--<RelativeLayout
+            android:layout_alignParentBottom="true"
+            android:id="@+id/submit_rlay"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:minWidth="200dp"
+                android:layout_height="60dp"
+                android:text="@string/submit"
+                android:textSize="14sp"
+                android:theme="@style/SaveButtonStyle"
+                app:cornerRadius="30dp"
+                app:rippleColor="@color/rippleColor"/>
+
+        </RelativeLayout>-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="gone"
+            android:id="@+id/rlt_atvty_progress"
+            android:clickable="true"
+            android:layout_height="match_parent">
+            <ProgressBar
+                android:indeterminateTint="@color/app_color"
+                android:id="@+id/pbr_atvty_progress"
+                android:layout_width="65dp"
+                android:layout_height="65dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="assetView"
+            type="com.zebra.demo.viewmodel.AssetViewViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btn_bottom_llay">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp">
+
+
+                    <!-- Row 1 -  SAP Asset No, SAP Asset Name -->
+                    <LinearLayout
+                        android:id="@+id/row1_llay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_asset_code_txt"
+                                style="@style/TitleViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/sub_asset_no" />
+
+                            <TextView
+                                android:id="@+id/val_asset_code_txt"
+                                style="@style/ValueViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_asset_code_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_asset_name_txt"
+                                style="@style/TitleViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/asset_name" />
+
+                            <TextView
+                                android:id="@+id/val_asset_name_txt"
+                                style="@style/ValueViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_asset_name_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!-- Row 2 - Asset Sub Code, Serial No -->
+                    <LinearLayout
+                        android:id="@+id/row2_llay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row1_llay"
+                        android:layout_marginTop="20dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_asset_subcode_txt"
+                                style="@style/TitleViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/asset_subcode" />
+
+                            <TextView
+                                android:id="@+id/val_asset_subcode_txt"
+                                style="@style/ValueViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_asset_subcode_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+
+                        <!--<RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_quantity_txt"
+                                style="@style/TitleViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/Quantity" />
+
+                            <TextView
+                                android:id="@+id/val_quantity_txt"
+                                style="@style/ValueViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_quantity_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>-->
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_serial_No_txt"
+                                style="@style/TitleViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/Serial_No" />
+
+                            <TextView
+                                android:id="@+id/val_serial_No_txt"
+                                style="@style/ValueViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_serial_No_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <!-- Row 3 - Inventory Number,  Asset Class -->
+                    <LinearLayout
+                        android:id="@+id/row3_llay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row2_llay"
+                        android:layout_marginTop="20dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_inventory_number_txt"
+                                style="@style/TitleViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/Inventory_Number" />
+
+                            <TextView
+                                android:id="@+id/val_inventory_number_txt"
+                                style="@style/ValueViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_inventory_number_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_asset_class_txt"
+                                style="@style/TitleViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/Asset_Class" />
+
+                            <TextView
+                                android:id="@+id/val_asset_class_txt"
+                                style="@style/ValueViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_asset_class_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <!-- Row 4 - Cost Center, Location -->
+                    <LinearLayout
+                        android:id="@+id/row4_llay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row3_llay"
+                        android:layout_marginTop="20dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_cost_center_txt"
+                                style="@style/TitleViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/Cost_Center" />
+
+                            <TextView
+                                android:id="@+id/val_cost_center_txt"
+                                style="@style/ValueViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_cost_center_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_location_txt"
+                                style="@style/TitleViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/Location" />
+
+                            <TextView
+                                android:id="@+id/val_location_txt"
+                                style="@style/ValueViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_location_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <!-- Row 5 - Building, RFID Tag -->
+                    <LinearLayout
+                        android:id="@+id/row5_llay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row4_llay"
+                        android:layout_marginTop="20dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_building_txt"
+                                style="@style/TitleViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/Building" />
+
+                            <TextView
+                                android:id="@+id/val_building_txt"
+                                style="@style/ValueViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_building_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_rfid_tag_txt"
+                                style="@style/TitleViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/rfid_tag" />
+
+                            <TextView
+                                android:id="@+id/val_rfid_tag_txt"
+                                style="@style/ValueViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_rfid_tag_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <!-- Row 6 - Status -->
+                    <LinearLayout
+                        android:id="@+id/row6_llay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row5_llay"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/lbl_status_txt"
+                                style="@style/TitleViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="5dp"
+                                android:text="@string/status" />
+
+                            <TextView
+                                android:id="@+id/val_status_txt"
+                                style="@style/ValueViewItemTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lbl_status_txt"
+                                android:layout_centerHorizontal="true"
+                                android:text="-" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1">
+
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+
+        <!-- Progress Bar -->
+        <RelativeLayout
+            android:id="@+id/rlt_atvty_progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/pbr_atvty_progress"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:indeterminateTint="@color/app_color" />
+        </RelativeLayout>
+
+        <!-- Scan Barcode, Scan RFID Button  -->
+        <LinearLayout
+
+            android:id="@+id/btn_bottom_llay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBarcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:lines="1"
+                    android:text="@string/scan_barcode"
+                    android:textSize="11sp"
+                    android:theme="@style/SaveButtonStyle"
+                    app:cornerRadius="30dp"
+                    app:icon="@drawable/ic_barcode"
+                    app:rippleColor="@color/rippleColor" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRFID"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="@string/scan_rfid"
+                    android:textSize="11sp"
+                    android:theme="@style/SaveButtonStyle"
+                    app:cornerRadius="30dp"
+                    app:icon="@drawable/ic_rfid"
+                    app:rippleColor="@color/rippleColor" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

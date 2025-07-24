@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/submit_rlay"
+            android:layout_alignParentTop="true"></ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/ewrp_inward"
+            style="@style/EditControlWrapperStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/elbl_inward"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconMode="dropdown_menu">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/ectl_inward"
+                    style="@style/AutoCompleteTextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Company"
+                    android:text="" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/submit_rlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="7dp"
+                android:layout_weight="1"
+                android:minWidth="200dp"
+                android:text="@string/save"
+                android:textSize="14sp"
+                android:theme="@style/SaveButtonStyle"
+                app:cornerRadius="30dp"
+                app:rippleColor="@color/rippleColor" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClear"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="7dp"
+                android:layout_weight="1"
+                android:minWidth="200dp"
+                android:text="@string/clear"
+                android:textSize="14sp"
+                android:theme="@style/SecondaryButtonStyle"
+                app:cornerRadius="30dp"
+                app:rippleColor="@color/secondaryColor" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlt_atvty_progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/pbr_atvty_progress"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:indeterminateTint="@color/app_color" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

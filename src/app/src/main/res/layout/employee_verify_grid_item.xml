@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+<LinearLayout
+    android:id="@+id/value_headder_rlay"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:background="@color/dark_gray"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+        style="@style/GridListItemEmpVerifyTextStyle"
+        android:layout_width="0dp"
+        android:id="@+id/sno_txt"
+        android:gravity="center_horizontal"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:text="S.No" />
+
+    <TextView
+        style="@style/GridListItemEmpVerifyTextStyle"
+        android:layout_width="0dp"
+        android:gravity="center_horizontal"
+        android:id="@+id/asset_name_txt"
+        android:layout_marginStart="5dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="ASSET NAME" />
+
+    <TextView
+        style="@style/GridListItemEmpVerifyTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/assigned_to_txt"
+        android:layout_weight="1"
+        android:layout_marginStart="5dp"
+        android:gravity="center_horizontal"
+        android:text="ASSIGNED TO" />
+
+    <TextView
+        style="@style/GridListItemEmpVerifyTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:id="@+id/assigned_to_code_txt"
+        android:layout_marginStart="5dp"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:text="ASSIGNED TO CODE" />
+
+</LinearLayout>
+
+</layout>
+<!--
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:id="@+id/txt"
+    android:fontFamily="@font/arial_regular"
+    android:text="Test"
+    android:background="@android:color/darker_gray"
+    android:textColor="@android:color/white"
+    android:textSize="12sp"/>-->

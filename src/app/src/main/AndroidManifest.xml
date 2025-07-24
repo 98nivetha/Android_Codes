@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zebra.demo">
+
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_PRIVILEGED"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.Manifest.permission.NETWORK_SETTINGS"/>
+    <!--<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>-->
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-feature android:name="android.hardware.nfc" android:required="true" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".zebralib.application.Application"
+        android:usesCleartextTraffic="true"
+        android:allowBackup="false"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:resizeableActivity="false"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup, android:appComponentFactory">
+
+        <!-- App Activities Starts -->
+        <activity
+            android:name=".view.activity.SplashScreenActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AssetManagement">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.activity.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AssetManagement"/>
+
+        <activity
+            android:name=".view.activity.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AssetManagement"/>
+
+       <!-- <activity
+            android:name=".view.fragment.AssetViewFragment"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AssetManagement"/>
+
+        <activity
+            android:name=".view.fragment.AssetAuditTypeSelectionFragment"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AssetManagement"/>
+
+        <activity
+            android:name=".view.fragment.AssetAuditListFragment"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AssetManagement"/>
+
+        <activity
+            android:name=".view.fragment.AssetOutwardListFragment"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AssetManagement"/>
+
+        <activity
+            android:name=".view.fragment.TagMappingFragment"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AssetManagement"/>
+
+
+        <activity
+            android:name=".view.fragment.AssetSearchFragment"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AssetManagement"/>
+
+        <activity
+            android:name=".view.fragment.AssetAuditScanFragment"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AssetManagement"/>
+
+        <activity
+            android:name=".view.fragment.AssetInwardListingFragment"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AssetManagement"/>-->
+
+        <!-- App Activities Ends -->
+
+        <activity
+            android:name=".zebralib.ManageDeviceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".zebralib.scanner.activities.NavigationHelpActivity"
+            android:label="@string/title_activity_navigation_help"
+            android:parentActivityName=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".zebralib.DeviceDiscoverActivity"
+            android:configChanges="keyboardHidden|screenSize|fontScale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".zebralib.rfidreader.settings.SettingsDetailActivity"
+            android:label="@string/title_activity_settings_detail"
+            android:launchMode="singleTask"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <service
+            android:name=".zebralib.rfidreader.notifications.NotificationsService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".zebralib.rfidreader.notifications.NotificationsReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+
+                <!-- Actions to be handled in the background should be registered here -->
+                <action android:name="com.rfidreader.battery.low" />
+                <action android:name="com.rfidreader.battery.critical" />
+                <action android:name="com.rfidreader.battery.charging" />
+                <action android:name="com.rfidreader.disconnected" />
+                <action android:name="com.rfidreader.connected" />
+                <action android:name="com.rfidreader.available" />
+                <action android:name="com.rfidreader.status.received" />
+                <action android:name="com.rfidreader.conn.failed" />
+                <action android:name="com.rfidreader.NFC.outofrange" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".zebralib.scanner.activities.ScannerHomeActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/scanner_title"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeLight.NoActionBar" />
+        <activity
+            android:name=".zebralib.scanner.activities.PairNewScannerActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/pairing_barcode_title"
+            android:launchMode="singleTask"
+            android:parentActivityName=".zebralib.scanner.activities.ScannersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".zebralib.scanner.activities.SplashScreenActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".zebralib.scanner.activities.AboutActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_about"
+            android:parentActivityName=".zebralib.scanner.activities.ScannersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".zebralib.scanner.activities.ScannersActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_scanners"
+            android:launchMode="singleTask"
+            android:parentActivityName=".zebralib.scanner.activities.ScannersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".zebralib.scanner.activities.ConnectionHelpActivity2"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_scanner_configurations"
+            android:parentActivityName=".zebralib.scanner.activities.ScannersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".zebralib.scanner.activities.SettingsActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".zebralib.scanner.activities.ScannersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".zebralib.scanner.activities.NotificationsActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_notifications"
+            android:parentActivityName=".zebralib.scanner.activities.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".zebralib.scanner.activities.BaseActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_base"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name=".zebralib.scanner.receivers.NotificationsReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+
+                <!-- Actions to be handled should be registered here -->
+                <action android:name="com.zebra.scannercontrol.connected" />
+                <action android:name="com.zebra.scannercontrol.disconnected" />
+                <action android:name="com.zebra.scannercontrol.available" />
+                <action android:name="com.zebra.scannercontrol.conn.failed" />
+                <action android:name="com.zebra.scannercontrol.barcode.received" />
+                <action android:name="com.zebra.scannercontrol.image.received" />
+                <action android:name="com.zebra.scannercontrol.video.received" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".zebralib.ActiveDeviceActivity"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_active_scanner"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="ActiveDeviceActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="activities.ActiveScannerActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.BeeperActionsActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:parentActivityName=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ActiveScannerActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.LEDActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:parentActivityName=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ActiveScannerActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.SymbologiesActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:parentActivityName=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ActiveScannerActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.BeeperSettingsActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:parentActivityName=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ActiveScannerActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.AvailableScannerActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_available_scanner"
+            android:parentActivityName=".zebralib.scanner.activities.ScannersActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ScannersActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.VibrationFeedback"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:parentActivityName=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ActiveScannerActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.BatteryStatistics"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:parentActivityName=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ActiveScannerActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.SupportedScanners"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_supported_scanners"
+            android:parentActivityName=".zebralib.scanner.activities.ConnectionHelpActivity2"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ConnectionHelpActivity2" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.PairingInstructionsAll"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_pairing_instructions_all"
+            android:parentActivityName=".zebralib.scanner.activities.ConnectionHelpActivity2"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ConnectionHelpActivity2" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.PairingInstructionsRFD8500"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_pairing_instructions_rfd8500"
+            android:parentActivityName=".zebralib.scanner.activities.ConnectionHelpActivity2"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ConnectionHelpActivity2" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.FindCabledScanner"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_find_cabled_scanner"
+            android:parentActivityName=".zebralib.scanner.activities.ScannersActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ScannersActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.SampleBarcodes"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:parentActivityName=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ActiveScannerActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.SsaSetSymbologyActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:noHistory="true"
+            android:parentActivityName=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ActiveScannerActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.ScanSpeedAnalyticsActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:parentActivityName=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ActiveScannerActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.ImageActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:parentActivityName=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ActiveScannerActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.IntelligentImageCaptureActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:parentActivityName=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ActiveScannerActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.ScaleActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_active_scanner"
+            android:parentActivityName=".zebralib.scanner.activities.ActiveScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".zebralib.scanner.activities.ActiveScannerActivity" />
+        </activity>
+        <activity
+            android:name=".zebralib.scanner.activities.DecodeImageActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+</manifest>

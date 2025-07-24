@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="false">
+
+        <RelativeLayout
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="10dp"
+            android:id="@+id/ouer_layer_rlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/row1_llay"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/lbl_asset_name_txt"
+                        android:text="@string/asset_name"
+                        android:layout_centerHorizontal="true"
+                        style="@style/TitleListItemTextStyle"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_below="@+id/lbl_asset_name_txt"
+                        android:id="@+id/val_asset_name_txt"
+                        android:text="-"
+                        android:layout_centerHorizontal="true"
+                        style="@style/ValueListItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/lbl_asset_code_txt"
+                        android:text="@string/asset_code"
+                        android:layout_centerHorizontal="true"
+                        style="@style/TitleListItemTextStyle"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_below="@+id/lbl_asset_code_txt"
+                        android:id="@+id/val_asset_code_txt"
+                        android:text="-"
+                        android:layout_centerHorizontal="true"
+                        style="@style/ValueListItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/row2_llay"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/row1_llay"
+                android:layout_width="match_parent"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/lbl_asset_serial_no_txt"
+                        android:text="@string/asset_serial_no"
+                        android:layout_centerHorizontal="true"
+                        style="@style/TitleListItemTextStyle"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_below="@+id/lbl_asset_serial_no_txt"
+                        android:id="@+id/val_asset_serial_no_txt"
+                        android:text="-"
+                        android:layout_centerHorizontal="true"
+                        style="@style/ValueListItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/lbl_verify_status_txt"
+                        android:text="@string/verify_status"
+                        android:layout_centerHorizontal="true"
+                        style="@style/TitleListItemTextStyle"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_below="@+id/lbl_verify_status_txt"
+                        android:id="@+id/val_verify_status_txt"
+                        android:text="-"
+                        android:layout_centerHorizontal="true"
+                        style="@style/ValueListItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_below="@+id/row2_llay"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_not_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:minWidth="100dp"
+                    android:layout_height="50dp"
+                    android:text="@string/not_ok"
+                    android:layout_toStartOf="@+id/btn_ok"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="14sp"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:theme="@style/SaveButtonStyle"
+                    app:cornerRadius="30dp"
+                    app:rippleColor="@color/rippleColor"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_horizontal"
+                    android:minWidth="100dp"
+                    android:layout_height="50dp"
+                    android:text="@string/ok"
+                    android:textSize="14sp"
+                    android:theme="@style/SaveButtonStyle"
+                    app:cornerRadius="30dp"
+                    app:rippleColor="@color/rippleColor"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

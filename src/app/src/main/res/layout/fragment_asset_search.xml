@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/submit_rlay"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="15dp"
+                android:layout_height="wrap_content">
+
+
+
+                <!-- Company -->
+                <RelativeLayout
+                    android:id="@+id/ewrp_company"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_company"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/ectl_company"
+                            style="@style/AutoCompleteTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Company"
+                            android:text="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <!--Building-->
+                <RelativeLayout
+                    android:id="@+id/ewrp_building_name"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_building_name"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/ectl_building_name"
+                            style="@style/AutoCompleteTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Building_Name"
+                            android:text="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <!-- Floor -->
+                <RelativeLayout
+                    android:id="@+id/ewrp_floor"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_floor"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/ectl_floor"
+                            style="@style/AutoCompleteTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Floor"
+                            android:text="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <!-- Location -->
+                <RelativeLayout
+                    android:id="@+id/ewrp_location"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_location"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/ectl_location"
+                            style="@style/AutoCompleteTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Location"
+                            android:text="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <!-- Asset Class -->
+                <RelativeLayout
+                    android:id="@+id/ewrp_asset_class"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_asset_class"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/ectl_asset_class"
+                            style="@style/AutoCompleteTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Asset_Class"
+                            android:text="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <!-- Asset -->
+                <RelativeLayout
+                    android:id="@+id/ewrp_asset"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_asset"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/ectl_asset"
+                            style="@style/AutoCompleteTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Asset"
+                            android:text="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <!-- Sub Asset -->
+                <RelativeLayout
+                    android:id="@+id/ewrp_sub_asset"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_sub_asset"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/ectl_sub_asset"
+                            style="@style/AutoCompleteTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/Sub_Asset"
+                            android:text="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <!-- Sub Asset Part Code -->
+                <RelativeLayout
+                    android:id="@+id/ewrp_sub_asset_part_code_code"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <RelativeLayout
+                        android:layout_toStartOf="@+id/search_img"
+                        android:layout_marginEnd="10dp"
+                        android:id="@+id/ewrp_sub_asset_part_code"
+                        style="@style/EditControlWrapperStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/elbl_sub_asset_part_code"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="match_parent"
+                            app:endIconMode="dropdown_menu"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                                android:id="@+id/ectl_sub_asset_part_code"
+                                style="@style/AutoCompleteTextViewStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/Sub_Asset_Part_Code"
+                                android:text="" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/search_img"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_search"
+                        />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"/>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+        <!-- Start Search and Clear Button -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/submit_rlay"
+            android:weightSum="3"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRFID"
+                android:layout_width="0dp"
+                android:layout_weight="1.8"
+                app:icon="@drawable/ic_rfid"
+                android:layout_height="60dp"
+                android:text="@string/start_search"
+                android:textSize="14sp"
+                android:theme="@style/SaveButtonStyle"
+                app:cornerRadius="30dp"
+                app:rippleColor="@color/rippleColor"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClear"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1.2"
+                android:layout_marginStart="7dp"
+                android:minWidth="200dp"
+                android:text="@string/clear"
+                android:textSize="14sp"
+                android:theme="@style/SecondaryButtonStyle"
+                app:cornerRadius="30dp"
+                app:rippleColor="@color/secondaryColor" />
+
+        </LinearLayout>
+
+
+        <!-- Progress Bar -->
+        <RelativeLayout
+            android:id="@+id/rlt_atvty_progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/pbr_atvty_progress"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:indeterminateTint="@color/app_color" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>
+
+
+
+
+
+
+
+
+
+<!--
+
+                <RelativeLayout
+
+                    android:id="@+id/ewrp_department"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_department"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/ectl_department"
+                            style="@style/AutoCompleteTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/department"
+                            android:text="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ewrp_category"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_category"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/ectl_category"
+                            style="@style/AutoCompleteTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/category"
+                            android:text="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ewrp_location"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_location"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/ectl_location"
+                            style="@style/AutoCompleteTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/location"
+                            android:text="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ewrp_asset_name"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_asset_name"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/ectl_asset_name"
+                            style="@style/AutoCompleteTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/asset_name"
+                            android:text="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ewrp_asset_code"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_asset_code"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/ectl_asset_code"
+                            style="@style/AutoCompleteTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/asset_code"
+                            android:text="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+
+
+-->

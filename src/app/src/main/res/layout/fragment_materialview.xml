@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="materialview"
+            type="com.zebra.demo.viewmodel.MaterialViewViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Page Title -->
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/materialview"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Scrollable Content -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/header_title"
+            android:layout_marginTop="16dp"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="vertical">
+
+                <!-- Row 1: Material Code -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lbl_material_code_txt"
+                        style="@style/TitleViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/material_code" />
+
+                    <TextView
+                        android:id="@+id/val_material_code_txt"
+                        style="@style/ValueViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lbl_material_code_txt"
+                        android:layout_centerHorizontal="true"
+                        android:text="-" />
+                </LinearLayout>
+
+                <!-- Row 2: Material Name -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lbl_material_name_txt"
+                        style="@style/TitleViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/material_name" />
+
+                    <TextView
+                        android:id="@+id/val_material_name_txt"
+                        style="@style/ValueViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lbl_material_name_txt"
+                        android:layout_centerHorizontal="true"
+                        android:text="-" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lbl_rackcode_txt"
+                        style="@style/TitleViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/RackCode" />
+
+                    <TextView
+                        android:id="@+id/val_lbl_rackcode_txt"
+                        style="@style/ValueViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lbl_rackcode_txt"
+                        android:layout_centerHorizontal="true"
+                        android:text="-" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lbl_inwardDtate_txt"
+                        style="@style/TitleViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/inward_Date" />
+
+                    <TextView
+                        android:id="@+id/val_inwardDtate_txt"
+                        style="@style/ValueViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lbl_inwardDtate_txt"
+                        android:layout_centerHorizontal="true"
+                        android:text="-" />
+                </LinearLayout>
+
+                <!-- Row 3: Packing Standard -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lbl_packingStd_txt"
+                        style="@style/TitleViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/packingstd" />
+
+                    <TextView
+                        android:id="@+id/val_packingStd_txt"
+                        style="@style/ValueViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lbl_packingStd_txt"
+                        android:layout_centerHorizontal="true"
+                        android:text="-" />
+                </LinearLayout>
+
+                <!-- Row 4: Quantity -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lbl_quantity_txt"
+                        style="@style/TitleViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/quantity" />
+
+                    <TextView
+                        android:id="@+id/val_quantity_txt"
+                        style="@style/ValueViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lbl_quantity_txt"
+                        android:layout_centerHorizontal="true"
+                        android:text="-" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lbl_status_txt"
+                        style="@style/TitleViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:text="@string/status" />
+
+                    <TextView
+                        android:id="@+id/val_status_txt"
+                        style="@style/ValueViewItemTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lbl_status_txt"
+                        android:layout_centerHorizontal="true"
+                        android:text="-" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlt_atvty_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/pbr_atvty_progress"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:indeterminateTint="@color/app_color" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="Scan RFID" />
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>

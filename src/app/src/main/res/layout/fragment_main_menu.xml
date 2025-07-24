@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/title_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/arial_bold"
+                        android:gravity="center"
+                        android:text="Welcome !"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/desc_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/title_txt"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/arial_regular"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:id="@+id/row1_llay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/desc_txt"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:id="@+id/rfid_mapping_rlay"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/menu_item_bg">
+
+                            <ImageView
+                                android:id="@+id/rfid_mapping_img"
+                                style="@style/MenuItemImgStyle"
+                                android:layout_centerHorizontal="true"
+                                android:contentDescription="@string/logo"
+                                android:src="@drawable/ic_menu_tag_mapping"
+                                app:tint="@color/primary_color" />
+
+
+                            <TextView
+                                style="@style/MenuItemTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rfid_mapping_img"
+                                android:layout_centerHorizontal="true"
+                                android:text="@string/tag_mapping" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/put_away_rlay"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/menu_item_bg">
+
+                            <ImageView
+                                android:id="@+id/put_away_img"
+                                style="@style/MenuItemImgStyle"
+                                android:layout_centerHorizontal="true"
+                                android:contentDescription="@string/logo"
+                                android:src="@drawable/ic_menu_asset_view"
+                                app:tint="@color/primary_color" />
+
+                            <TextView
+                                style="@style/MenuItemTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/put_away_img"
+                                android:layout_centerHorizontal="true"
+                                android:text="@string/put_away" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row2_llay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row1_llay"
+                        android:layout_marginTop="20dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:id="@+id/material_info_rlay"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/menu_item_bg">
+
+                            <ImageView
+                                android:id="@+id/material_info_img"
+                                style="@style/MenuItemImgStyle"
+                                android:layout_centerHorizontal="true"
+                                android:contentDescription="@string/logo"
+                                android:src="@drawable/ic_menu_asset_inward"
+                                app:tint="@color/primary_color" />
+
+                            <TextView
+                                style="@style/MenuItemTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/material_info_img"
+                                android:layout_centerHorizontal="true"
+                                android:text="@string/material_view" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rackwise_info_rlay"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/menu_item_bg">
+
+                            <ImageView
+                                android:id="@+id/rackwise_info_img"
+                                style="@style/MenuItemImgStyle"
+                                android:layout_centerHorizontal="true"
+                                android:contentDescription="@string/logo"
+                                android:src="@drawable/ic_menu_asset_outward"
+                                app:tint="@color/primary_color" />
+
+                            <TextView
+                                style="@style/MenuItemTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rackwise_info_img"
+                                android:layout_centerHorizontal="true"
+                                android:text="@string/rack_wise_info" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row3_llay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row2_llay"
+                        android:layout_marginTop="20dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:id="@+id/audit_rlay"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/menu_item_bg">
+
+                            <ImageView
+                                android:id="@+id/audit_img"
+                                style="@style/MenuItemImgStyle"
+                                android:layout_centerHorizontal="true"
+                                android:contentDescription="@string/logo"
+                                android:src="@drawable/ic_menu_audit"
+                                app:tint="@color/primary_color" />
+
+                            <TextView
+                                style="@style/MenuItemTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/audit_img"
+                                android:layout_centerHorizontal="true"
+                                android:text="@string/audit" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/re_allocate_rlay"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/menu_item_bg">
+
+                            <ImageView
+                                android:id="@+id/re_allocate_img"
+                                style="@style/MenuItemImgStyle"
+                                android:layout_centerHorizontal="true"
+                                android:contentDescription="@string/logo"
+                                android:src="@drawable/ic_menu_asset_search"
+                                app:tint="@color/primary_color" />
+
+                            <TextView
+                                style="@style/MenuItemTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/re_allocate_img"
+                                android:layout_centerHorizontal="true"
+                                android:text="@string/re_allocate" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/row4_llay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row3_llay"
+                        android:layout_marginTop="20dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:id="@+id/inventory_report_rlay"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/menu_item_bg">
+
+                            <ImageView
+                                android:id="@+id/inventory_report_img"
+                                style="@style/MenuItemImgStyle"
+                                android:layout_centerHorizontal="true"
+                                android:contentDescription="@string/logo"
+                                android:src="@drawable/ic_emp_verify"
+                                app:tint="@color/primary_color" />
+
+                            <TextView
+                                style="@style/MenuItemTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/inventory_report_img"
+                                android:layout_centerHorizontal="true"
+                                android:text="@string/inventory_report" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/row4_llay"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnConnectToDevice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:text="@string/connect_to_reader"
+                            android:textSize="14sp"
+                            android:theme="@style/SaveButtonStyle"
+                            app:cornerRadius="30dp"
+                            app:icon="@drawable/ic_rfid"
+                            app:rippleColor="@color/rippleColor" />
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <!-- <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:title="@string/audit"
+            app:titleTextColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/app_color">
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>-->
+        <!-- android:layout_below="@+id/appbar_layout" -->
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_margin="20dp"
+                android:layout_height="wrap_content">
+
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:id="@+id/ewrp_location"
+                    style="@style/EditControlWrapperStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/elbl_location"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="match_parent"
+                        app:endIconMode="dropdown_menu"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/ectl_location"
+                            style="@style/AutoCompleteTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/location"
+                            android:text="" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/ewrp_location"
+                    android:id="@+id/row1_llay"
+                    android:layout_width="match_parent"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/lbl_audit_id_txt"
+                            android:text="@string/Audit_In_Charge"
+                            android:layout_centerHorizontal="true"
+                            style="@style/TitleViewItemTextStyle"
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:layout_below="@+id/lbl_audit_id_txt"
+                            android:id="@+id/val_audit_id_txt"
+                            android:text="-"
+                            android:layout_centerHorizontal="true"
+                            style="@style/ValueViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/row2_llay"
+                    android:layout_below="@+id/row1_llay"
+                    android:layout_width="match_parent"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_weight="2"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/lbl_department_txt"
+                            android:text="@string/Building_Name"
+                            android:layout_centerHorizontal="true"
+                            style="@style/TitleViewItemTextStyle"
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:layout_below="@+id/lbl_department_txt"
+                            android:id="@+id/val_department_txt"
+                            android:text="-"
+                            android:layout_centerHorizontal="true"
+                            style="@style/ValueViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/row3_llay"
+                    android:layout_below="@+id/row2_llay"
+                    android:layout_width="match_parent"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/lbl_scanned_qty_txt"
+                            android:text="@string/Completion"
+                            android:layout_centerHorizontal="true"
+                            style="@style/TitleViewItemTextStyle"
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:layout_below="@+id/lbl_scanned_qty_txt"
+                            android:id="@+id/val_scanned_qty_txt"
+                            android:text="-"
+                            android:layout_centerHorizontal="true"
+                            style="@style/ValueViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/lbl_percentage_txt"
+                            android:text="@string/Percentage"
+                            android:layout_centerHorizontal="true"
+                            style="@style/TitleViewItemTextStyle"
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:layout_below="@+id/lbl_percentage_txt"
+                            android:id="@+id/val_percentage_txt"
+                            android:text="-"
+                            android:layout_centerHorizontal="true"
+                            style="@style/ValueViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:focusable="true"
+        android:gravity="center"
+        android:visibility="gone"
+        android:id="@+id/rlt_atvty_progress"
+        android:clickable="true"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:indeterminateTint="@color/app_color"
+            android:id="@+id/pbr_atvty_progress"
+            android:layout_width="65dp"
+            android:layout_height="65dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/btn_bottom_llay"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_marginStart="5dp"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRFID"
+                android:layout_width="match_parent"
+                app:icon="@drawable/ic_rfid"
+                android:layout_height="60dp"
+                android:text="@string/scan_rfid"
+                android:textSize="14sp"
+                android:theme="@style/SaveButtonStyle"
+                app:cornerRadius="30dp"
+                app:rippleColor="@color/rippleColor"/>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
+</layout>

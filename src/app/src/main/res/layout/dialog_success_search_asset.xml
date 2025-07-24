@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="false">
+
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/close_img"
+                android:src="@drawable/ic_close"
+                android:layout_gravity="end"
+                android:layout_width="50dp"
+                android:padding="8dp"
+                android:layout_height="50dp"/>
+
+
+            <ImageView
+                android:src="@drawable/ic_success"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="200dp"
+                android:layout_height="200dp"/>
+
+
+            <TextView
+                android:id="@+id/val_asset_name_txt"
+                android:fontFamily="@font/arial_bold"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="@string/asset_was_successfully_found"
+                android:layout_width="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_view_asset"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="30dp"
+                app:icon="@drawable/ic_eye"
+                android:layout_gravity="center_horizontal"
+                android:minWidth="200dp"
+                android:layout_height="60dp"
+                android:text="@string/view_asset"
+                android:textSize="14sp"
+                android:theme="@style/SaveButtonStyle"
+                app:cornerRadius="30dp"
+                app:rippleColor="@color/rippleColor"/>
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
