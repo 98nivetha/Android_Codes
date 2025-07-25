@@ -1,5 +1,4 @@
 package com.zebra.demo.data.remote.responsemodels;
-
 import com.google.gson.annotations.SerializedName;
 
 public class RackDetails {

@@ -1,13 +1,9 @@
 package com.zebra.demo.utility;
-
 import android.app.Activity;
 import android.widget.Toast;
-
-
 import com.zebra.demo.zebralib.ActiveDeviceActivity;
 import com.zebra.demo.zebralib.application.Application;
 import com.zebra.demo.zebralib.rfidreader.rfid.RFIDController;
-
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

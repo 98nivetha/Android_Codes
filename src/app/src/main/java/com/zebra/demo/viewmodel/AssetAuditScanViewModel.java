@@ -58,7 +58,6 @@ public class AssetAuditScanViewModel extends ViewModel {
                 public void onError(String e) {
                     if (e != null) {
                         apiResponseListener.onFailed(e);
-                        //ExceptionHandler.handleResponseException(e, getExceptionHandler());
                         isDataLoading.setValue(false);
                     }
                 }
@@ -66,7 +65,6 @@ public class AssetAuditScanViewModel extends ViewModel {
                 @Override
                 public void onFailure(Throwable t) {
                     if (t != null) {
-                        //apiResponseListener.onFailed(t.getMessage());
                         ExceptionHandler.handleListenerException(apiResponseListener, t, getExceptionHandler());
                         isDataLoading.setValue(false);
                     }
@@ -137,10 +135,6 @@ public class AssetAuditScanViewModel extends ViewModel {
             assetAuditRequest.setAuditcode(selectedAuditId);
             assetAuditRequest.setAuditby(new SharedPreference(Application.getAppContext()).getUserId());
             assetAuditRequest.setRfidtag(tag);
-            /*assetAuditRequest.setAuditid(selectedAuditId);
-            assetAuditRequest.setScanedby(new SharedPreference(Application.getAppContext()).getUserId());
-            assetAuditRequest.setScanlocation((selectedLocationDetail != null && selectedLocationDetail.LCode != null) ? selectedLocationDetail.LCode : "");
-            assetAuditRequest.setTagid(tag);*/
             assetAuditRequestList.add(assetAuditRequest);
         }
         return assetAuditRequestList;
@@ -208,20 +202,4 @@ public class AssetAuditScanViewModel extends ViewModel {
     public void setSelectedAuditId(String selectedAuditId) {
         this.selectedAuditId = selectedAuditId;
     }
-
-    /*public String getSelectedBuildingName() {
-        return selectedBuildingName;
-    }
-
-    public void setSelectedBuildingName(String selectedBuildingName) {
-        this.selectedBuildingName = selectedBuildingName;
-    }
-
-    public String getSelectedCompletePercentage() {
-        return selectedCompletePercentage;
-    }
-
-    public void setSelectedCompletePercentage(String selectedCompletePercentage) {
-        this.selectedCompletePercentage = selectedCompletePercentage;
-    }*/
 }

@@ -1,12 +1,10 @@
 package com.zebra.demo.view.fragment.IBA_FRAGMENTS;
-
 import com.zebra.demo.utility.Utility;
 import com.zebra.demo.view.fragment.BarcodeRFIDScanBaseFragment;
 import com.zebra.demo.view.listener.ApiResponseListener;
 import com.zebra.demo.view.listener.BarcodeRFIDScanResultListener;
 import com.zebra.demo.view.listener.RecyclerViewItemClickListener;
 import com.zebra.demo.zebralib.rfidreader.inventory.InventoryListItem;
-
 import java.util.List;
 
 public class ReAllocateFragment extends BarcodeRFIDScanBaseFragment implements BarcodeRFIDScanResultListener, RecyclerViewItemClickListener, ApiResponseListener {

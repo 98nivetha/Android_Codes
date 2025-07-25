@@ -1,8 +1,6 @@
 package com.zebra.demo.viewmodel;
-
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
 import com.zebra.demo.data.remote.exception.ErrorResource;
 import com.zebra.demo.data.remote.exception.ExceptionHandler;
 import com.zebra.demo.data.remote.listener.ExceptionHandlerListener;
@@ -18,16 +16,10 @@ import com.zebra.demo.data.remote.model.EmployeesAllocatedAssetDetailsResponse;
 import com.zebra.demo.data.remote.model.ScanAssetDetail;
 import com.zebra.demo.data.remote.repository.EmployeeVerifyRepository;
 import com.zebra.demo.view.listener.ApiResponseListener;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeVerifyViewModel extends ViewModel {
-
-
-    //public MutableLiveData<EmployeeVerifyTagInsertResponse> employeeVerifyTagInsertResponseMutableLiveData = new MutableLiveData<>();
-    //public MutableLiveData<List<EmployeeVerifyTagInsertRequest>> employeeVerifyTagInsertRequests = new MutableLiveData<>();
-
     //Employee Drop Down
     public MutableLiveData<List<EmployeeDetail>> employeeDetailListResponseMutableLiveData = new MutableLiveData<>();
 
@@ -114,21 +106,12 @@ public class EmployeeVerifyViewModel extends ViewModel {
             return;
         }
 
-//        if(employeeVerifyTagInsertRequests == null || employeeVerifyTagInsertRequests.isEmpty()) {
-//            apiResponseListener.onFailed("No Tag Id Found");
-//        }
-
-
         isDataLoading.setValue(true);
         EmployeeVerifyRepository employeeVerifyRepository = EmployeeVerifyRepository.getInstance();
         employeeVerifyRepository.employeeAssetVerificationInitial(new ResponseListener<List<EmployeeDetail>>() {
             @Override
             public void onDataReceived(List<EmployeeDetail> employeeDetailList) {
-                //if(assetDetails != null && !assetDetails.isEmpty()) {
                 employeeDetailListResponseMutableLiveData.setValue(employeeDetailList);
-                    /*} else {
-                        apiResponseListener.onFailed("No data found");
-                    }*/
                 isDataLoading.setValue(false);
             }
 
@@ -136,7 +119,6 @@ public class EmployeeVerifyViewModel extends ViewModel {
             public void onError(String e) {
                 if (e != null) {
                     apiResponseListener.onFailed(e);
-                    //ExceptionHandler.handleResponseException(e, getExceptionHandler());
                     isDataLoading.setValue(false);
                 }
             }
@@ -144,7 +126,6 @@ public class EmployeeVerifyViewModel extends ViewModel {
             @Override
             public void onFailure(Throwable t) {
                 if (t != null) {
-                    //apiResponseListener.onFailed(t.getMessage());
                     ExceptionHandler.handleListenerException(apiResponseListener, t, getExceptionHandler());
                     isDataLoading.setValue(false);
                 }
@@ -192,11 +173,6 @@ public class EmployeeVerifyViewModel extends ViewModel {
                 } else {
                     apiResponseListener.onFailed("No data found");
                 }
-                //if(assetDetails != null && !assetDetails.isEmpty()) {
-                //employeeDetailListResponseMutableLiveData.setValue(employeeDetailList);
-                    /*} else {
-                        apiResponseListener.onFailed("No data found");
-                    }*/
                 isDataLoading.setValue(false);
             }
 
@@ -204,7 +180,6 @@ public class EmployeeVerifyViewModel extends ViewModel {
             public void onError(String e) {
                 if (e != null) {
                     apiResponseListener.onFailed(e);
-                    //ExceptionHandler.handleResponseException(e, getExceptionHandler());
                     isDataLoading.setValue(false);
                 }
             }
@@ -212,7 +187,6 @@ public class EmployeeVerifyViewModel extends ViewModel {
             @Override
             public void onFailure(Throwable t) {
                 if (t != null) {
-                    //apiResponseListener.onFailed(t.getMessage());
                     ExceptionHandler.handleListenerException(apiResponseListener, t, getExceptionHandler());
                     isDataLoading.setValue(false);
                 }
@@ -294,11 +268,6 @@ public class EmployeeVerifyViewModel extends ViewModel {
             apiResponseListener.onFailed("Please select Employee Detail");
             return;
         }
-
-        /*if (assetDetailListResponseMutableLiveData.getValue() == null || assetDetailListResponseMutableLiveData.getValue().isEmpty()) {
-            apiResponseListener.onFailed("No Asset Found");
-            return;
-        }*/
 
         if (assertTagList.getValue() == null || assertTagList.getValue().isEmpty()) {
             apiResponseListener.onFailed("No Tag Scanned");

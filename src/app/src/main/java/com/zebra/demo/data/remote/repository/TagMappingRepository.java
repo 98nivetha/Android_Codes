@@ -1,23 +1,12 @@
 package com.zebra.demo.data.remote.repository;
-
 import com.zebra.demo.data.remote.BaseApiService;
 import com.zebra.demo.data.remote.listener.ResponseListener;
-import com.zebra.demo.data.remote.model.ApiResponse;
-import com.zebra.demo.data.remote.model.AssetDetail;
-import com.zebra.demo.data.remote.model.AssetHeader;
-import com.zebra.demo.data.remote.model.FilterAssetNameRequest;
 import com.zebra.demo.data.remote.model.FilterAssetRFIDMappingResponse;
 import com.zebra.demo.data.remote.model.GetAllAssetRFIDMappingRequest;
 import com.zebra.demo.data.remote.model.InsertAssetRFIDMappingRequest;
 import com.zebra.demo.data.remote.model.InsertAssetRFIDMappingResponse;
-import com.zebra.demo.data.remote.model.RFIDTagMappingRequest;
 import com.zebra.demo.data.remote.model.UpdateAssetRFIDMappingRequest;
 import com.zebra.demo.data.remote.model.UpdateAssetRFIDMappingResponse;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import retrofit2.Call;

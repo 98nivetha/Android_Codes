@@ -1,5 +1,4 @@
 package com.zebra.demo.view.fragment.IBA_FRAGMENTS;
-
 import com.zebra.demo.utility.Utility;
 import com.zebra.demo.view.fragment.BarcodeRFIDScanBaseFragment;
 import com.zebra.demo.view.listener.ApiResponseListener;

@@ -1,21 +1,15 @@
 package com.zebra.demo.view.adapter;
-
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.zebra.demo.R;
-
 import com.zebra.demo.data.remote.model.AssetAudit;
 import com.zebra.demo.databinding.ListItemAssetAuditBinding;
 import com.zebra.demo.utility.Utility;
 import com.zebra.demo.view.listener.RecyclerViewItemClickListener;
-
 import java.util.List;
 
 /*AssetAuditListAdapter*/

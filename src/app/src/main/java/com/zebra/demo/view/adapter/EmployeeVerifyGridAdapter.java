@@ -1,13 +1,10 @@
 package com.zebra.demo.view.adapter;
-
 import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import com.zebra.demo.R;
-
 import java.util.List;
 
 public  class EmployeeVerifyGridAdapter extends BaseAdapter {

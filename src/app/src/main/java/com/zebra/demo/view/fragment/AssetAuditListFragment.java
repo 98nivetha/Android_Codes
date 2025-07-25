@@ -1,17 +1,14 @@
 package com.zebra.demo.view.fragment;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
 import com.zebra.demo.R;
 import com.zebra.demo.data.remote.model.AssetAudit;
 import com.zebra.demo.databinding.FragmentAssetAuditListingBinding;
@@ -27,7 +24,6 @@ import com.zebra.demo.view.listener.RecyclerViewItemClickListener;
 import com.zebra.demo.viewmodel.AssetAuditViewModel;
 import com.zebra.demo.zebralib.ActiveDeviceActivity;
 import com.zebra.demo.zebralib.rfidreader.inventory.InventoryListItem;
-
 import java.util.List;
 
 public class AssetAuditListFragment

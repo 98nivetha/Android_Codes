@@ -1,15 +1,12 @@
 package com.zebra.demo.viewmodel;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
 import com.zebra.demo.data.local.SharedPreference;
 import com.zebra.demo.data.remote.exception.ErrorResource;
 import com.zebra.demo.data.remote.exception.ExceptionHandler;
 import com.zebra.demo.data.remote.listener.ExceptionHandlerListener;
 import com.zebra.demo.data.remote.listener.ResponseListener;
-import com.zebra.demo.data.remote.model.AssetAuditRequest;
 import com.zebra.demo.data.remote.model.AssetInward;
 import com.zebra.demo.data.remote.model.AssetInwardAutoRequest;
 import com.zebra.demo.data.remote.model.AssetInwardAutoResponse;
@@ -18,7 +15,6 @@ import com.zebra.demo.data.remote.model.AssetInwardManualResponse;
 import com.zebra.demo.data.remote.repository.AssetInwardRepository;
 import com.zebra.demo.view.listener.ApiResponseListener;
 import com.zebra.demo.zebralib.application.Application;
-
 import java.util.ArrayList;
 import java.util.List;
 

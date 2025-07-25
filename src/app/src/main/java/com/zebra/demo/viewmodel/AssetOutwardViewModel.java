@@ -1,8 +1,6 @@
 package com.zebra.demo.viewmodel;
-
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
 import com.zebra.demo.data.local.SharedPreference;
 import com.zebra.demo.data.remote.exception.ErrorResource;
 import com.zebra.demo.data.remote.exception.ExceptionHandler;
@@ -16,7 +14,6 @@ import com.zebra.demo.data.remote.repository.AssetOutwardRepository;
 import com.zebra.demo.data.remote.repository.AssetRepository;
 import com.zebra.demo.view.listener.ApiResponseListener;
 import com.zebra.demo.zebralib.application.Application;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,27 +1,15 @@
 package com.zebra.demo.data.remote.repository;
-
-import com.zebra.demo.BuildConfig;
 import com.zebra.demo.data.remote.BaseApiService;
 import com.zebra.demo.data.remote.listener.ResponseListener;
-import com.zebra.demo.data.remote.model.AssetAudit;
-import com.zebra.demo.data.remote.model.AssetAuditDetail;
 import com.zebra.demo.data.remote.model.AssetAuditRequest;
 import com.zebra.demo.data.remote.model.AssetAuditResponse;
-import com.zebra.demo.data.remote.model.AssetDetail;
 import com.zebra.demo.data.remote.model.FilterAssetRFIDMappingResponse;
-
 import java.util.List;
-
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.http.Body;
-import retrofit2.http.GET;
-import retrofit2.http.Header;
-import retrofit2.http.POST;
-import retrofit2.http.Query;
 
 public class AssetAuditRepository extends BaseApiService {
     private static AssetAuditRepository assetRepository;

@@ -1,5 +1,4 @@
 package com.zebra.demo.viewmodel;
-
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.zebra.demo.data.remote.listener.ResponseListener;

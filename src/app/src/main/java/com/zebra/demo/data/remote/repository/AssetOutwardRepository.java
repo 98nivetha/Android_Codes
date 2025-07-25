@@ -1,13 +1,9 @@
 package com.zebra.demo.data.remote.repository;
-
-import com.zebra.demo.BuildConfig;
 import com.zebra.demo.data.remote.BaseApiService;
 import com.zebra.demo.data.remote.listener.ResponseListener;
 import com.zebra.demo.data.remote.model.ApiResponse;
 import com.zebra.demo.data.remote.model.AssetOutward;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

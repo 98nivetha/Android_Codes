@@ -1,19 +1,14 @@
 package com.zebra.demo.view.fragment;
-
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.zebra.demo.R;
 import com.zebra.demo.data.local.SharedPreference;
@@ -24,9 +19,6 @@ import com.zebra.demo.databinding.FragmentEmployeeVerifyBinding;
 import com.zebra.demo.utility.Utility;
 import com.zebra.demo.view.activity.MainActivity;
 import com.zebra.demo.view.adapter.EmployeeAutoCompleteTextViewAdapter;
-import com.zebra.demo.view.adapter.EmployeeVerifyGridAdapter;
-import com.zebra.demo.view.adapter.EmployeeVerifyListAdapter;
-import com.zebra.demo.view.adapter.TestMyAdapter;
 import com.zebra.demo.view.listener.ApiResponseListener;
 import com.zebra.demo.view.listener.BarcodeRFIDScanResultListener;
 import com.zebra.demo.view.listener.ReaderTriggerEvent;
@@ -36,7 +28,6 @@ import com.zebra.demo.zebralib.ActiveDeviceActivity;
 import com.zebra.demo.zebralib.application.Application;
 import com.zebra.demo.zebralib.rfidreader.inventory.InventoryListItem;
 import com.zebra.demo.zebralib.rfidreader.rfid.RFIDController;
-
 import java.util.ArrayList;
 import java.util.List;
 

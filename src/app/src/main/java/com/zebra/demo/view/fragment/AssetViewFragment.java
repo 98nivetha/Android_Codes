@@ -1,17 +1,14 @@
 package com.zebra.demo.view.fragment;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
-
 import com.zebra.demo.R;
 import com.zebra.demo.databinding.ActivityAssetViewBinding;
 import com.zebra.demo.utility.Utility;
@@ -22,7 +19,6 @@ import com.zebra.demo.viewmodel.AssetViewViewModel;
 import com.zebra.demo.zebralib.ActiveDeviceActivity;
 import com.zebra.demo.zebralib.rfidreader.inventory.InventoryListItem;
 import com.zebra.demo.zebralib.scanner.barcode.BarcodeTypes;
-
 import java.util.List;
 
 public class AssetViewFragment extends BarcodeRFIDScanBaseFragment implements BarcodeRFIDScanResultListener {

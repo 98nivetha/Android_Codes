@@ -1,6 +1,4 @@
 package com.zebra.demo.data.remote.repository;
-
-import com.zebra.demo.BuildConfig;
 import com.zebra.demo.data.remote.BaseApiService;
 import com.zebra.demo.data.remote.listener.ResponseListener;
 import com.zebra.demo.data.remote.model.AssetInward;
@@ -8,11 +6,9 @@ import com.zebra.demo.data.remote.model.AssetInwardAutoRequest;
 import com.zebra.demo.data.remote.model.AssetInwardAutoResponse;
 import com.zebra.demo.data.remote.model.AssetInwardManualRequest;
 import com.zebra.demo.data.remote.model.AssetInwardManualResponse;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -1,14 +1,11 @@
 package com.zebra.demo.view.fragment;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-
 import com.zebra.demo.R;
 import com.zebra.demo.databinding.ActivityAssetAuditTypeSelectionBinding;
 import com.zebra.demo.utility.AssetAuditType;
@@ -16,7 +13,6 @@ import com.zebra.demo.view.activity.MainActivity;
 import com.zebra.demo.view.listener.BarcodeRFIDScanResultListener;
 import com.zebra.demo.zebralib.ActiveDeviceActivity;
 import com.zebra.demo.zebralib.rfidreader.inventory.InventoryListItem;
-
 import java.util.List;
 
 public class AssetAuditTypeSelectionFragment extends BarcodeRFIDScanBaseFragment implements BarcodeRFIDScanResultListener {

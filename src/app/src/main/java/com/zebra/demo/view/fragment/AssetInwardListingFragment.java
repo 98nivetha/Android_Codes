@@ -1,5 +1,4 @@
 package com.zebra.demo.view.fragment;
-
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -10,14 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.inputmethod.EditorInfo;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.zebra.demo.R;
 import com.zebra.demo.data.remote.model.AssetInward;
 import com.zebra.demo.data.remote.model.AssetInwardAutoResponse;
@@ -35,7 +31,6 @@ import com.zebra.demo.viewmodel.AssetInwardViewModel;
 import com.zebra.demo.zebralib.ActiveDeviceActivity;
 import com.zebra.demo.zebralib.rfidreader.inventory.InventoryListItem;
 import com.zebra.rfid.api3.ENUM_TRIGGER_MODE;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
