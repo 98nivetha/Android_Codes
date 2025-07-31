@@ -1,21 +1,34 @@
 package com.zebra.demo.view.fragment;
+
+import static com.zebra.demo.zebralib.application.Application.TAG_LIST_LOADED;
+import static com.zebra.demo.zebralib.rfidreader.rfid.RFIDController.ActiveProfile;
 import static com.zebra.demo.zebralib.rfidreader.rfid.RFIDController.mIsInventoryRunning;
+import static com.zebra.demo.zebralib.scanner.helpers.ActiveDeviceAdapter.INVENTORY_TAB;
+import static com.zebra.demo.zebralib.scanner.helpers.ActiveDeviceAdapter.RFID_SETTINGS_TAB;
+import static com.zebra.demo.zebralib.scanner.helpers.ActiveDeviceAdapter.SETTINGS_TAB;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
+
+import com.zebra.demo.R;
 import com.zebra.demo.view.listener.BarcodeRFIDScanResultListener;
 import com.zebra.demo.view.listener.ReaderTriggerEvent;
 import com.zebra.demo.zebralib.ActiveDeviceActivity;
+import com.zebra.demo.zebralib.DeviceDiscoverActivity;
 import com.zebra.demo.zebralib.application.Application;
+import com.zebra.demo.zebralib.rfidreader.common.Constants;
 import com.zebra.demo.zebralib.rfidreader.common.ResponseHandlerInterfaces;
 import com.zebra.demo.zebralib.rfidreader.inventory.InventoryListItem;
+import com.zebra.demo.zebralib.rfidreader.rapidread.MatchModeProgressView;
 import com.zebra.demo.zebralib.rfidreader.rfid.RFIDController;
 import com.zebra.demo.zebralib.rfidreader.settings.ISettingsUtil;
 import com.zebra.rfid.api3.RFIDResults;

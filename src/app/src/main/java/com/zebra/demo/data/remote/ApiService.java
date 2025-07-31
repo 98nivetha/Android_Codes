@@ -26,9 +26,15 @@ import com.zebra.demo.data.remote.model.LoginRequest;
 import com.zebra.demo.data.remote.model.MetaDetail;
 import com.zebra.demo.data.remote.model.UpdateAssetRFIDMappingRequest;
 import com.zebra.demo.data.remote.model.UpdateAssetRFIDMappingResponse;
+import com.zebra.demo.data.remote.requestmodels.PutAwayScanningRequest;
+import com.zebra.demo.data.remote.requestmodels.ReturnPartsValidInfoRequest;
+import com.zebra.demo.data.remote.requestmodels.StockInwardRequest;
 import com.zebra.demo.data.remote.responsemodels.GetAllMaterialInfoMainResponse;
 import com.zebra.demo.data.remote.responsemodels.GetAllRackDatasResponse;
 import com.zebra.demo.data.remote.responsemodels.GetSingleMaterialDataResponse;
+import com.zebra.demo.data.remote.responsemodels.PutAwayInsertResponse;
+import com.zebra.demo.data.remote.responsemodels.PutAwayScanningResponse;
+import com.zebra.demo.data.remote.responsemodels.ReturnPartsValidInfoResponse;
 import com.zebra.demo.data.remote.responsemodels.RfidMappingResponse;
 import java.util.List;
 import java.util.Map;
@@ -58,6 +64,15 @@ public interface ApiService {
 
     @POST("/IBA_IVM_AND_FIND_MATERIALINFO_GetAll")
     Call<GetSingleMaterialDataResponse> getSingleMaterial (@Body RequestBody requestBody);
+
+    @POST("/IBA_IVM_AND_RETURN_StockreturnScanning")
+    Call<ReturnPartsValidInfoResponse> checkValidParts (@Body ReturnPartsValidInfoRequest request);
+
+    @POST("/IBA_IVM_AND_PUT_AWAY_PutAwayScanning")
+    Call<PutAwayScanningResponse> putAwayScanning (@Body PutAwayScanningRequest request);
+
+    @POST("/IBA_IVM_AND_PUT_AWAY_Insert_Update")
+    Call<PutAwayInsertResponse> addPutAwayDatas (@Body StockInwardRequest request);
 
 
 

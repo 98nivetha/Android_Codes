@@ -1,14 +1,17 @@
 package com.zebra.demo.view.activity;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+
 import com.zebra.demo.R;
 import com.zebra.demo.data.local.SharedPreference;
 import com.zebra.demo.databinding.ActivityMainBinding;

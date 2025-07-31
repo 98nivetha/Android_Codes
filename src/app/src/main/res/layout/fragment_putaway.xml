@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <data>
         <variable
             name="materialview"
@@ -10,20 +9,22 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
+        <!-- Title -->
         <TextView
             android:id="@+id/centerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:layout_marginLeft="20dp"
-            android:text="@string/put_away"
             android:layout_centerHorizontal="true"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="20dp"
+            android:text="@string/put_away"
+            android:textSize="24sp"
+            android:textStyle="bold"  />
 
-        <RelativeLayout
+        <!-- Rack Input Field -->
+        <LinearLayout
             android:id="@+id/ewrp_rack"
             style="@style/EditControlWrapperStyle"
             android:layout_width="match_parent"
@@ -34,9 +35,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/elbl_rack"
                 style="@style/TextInputLayoutStyle"
-                android:layout_width="350dp"
+                android:layout_width="290dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 app:endIconMode="dropdown_menu">
 
@@ -45,22 +45,85 @@
                     style="@style/AutoCompleteTextViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:focusable="true"
                     android:hint="@string/RackCode"
+                    android:layout_marginEnd="10dp"
                     android:text="@{materialview.selectedRackDetail}" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/qr_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/qrcode" />
+        </LinearLayout>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ewrp_rack"
+            android:layout_marginTop="20dp"
+
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/scanButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="@string/scan_rfid" />
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="@string/submit" />
+
+
+            <Button
+                android:id="@+id/clearButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/clear" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlt_atvty_progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/pbr_atvty_progress"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/app_color" />
         </RelativeLayout>
 
-        <Button
-            android:id="@+id/scanButton"
-            android:layout_width="wrap_content"
+        <!-- RecyclerView to show scanned items -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/scan_rfid"
-            android:layout_margin="20dp"
-            android:layout_below="@id/ewrp_rack"
-            android:layout_centerHorizontal="true" />
+            android:layout_below="@id/buttonLayout"
+            android:layout_marginTop="20dp"
+            android:padding="8dp"
+            android:visibility="gone" />
 
     </RelativeLayout>
 </layout>

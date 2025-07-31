@@ -23,7 +23,6 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <!-- Scrollable Content -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -34,165 +33,172 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:baselineAligned="false"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:baselineAligned="false">
 
-                <!-- Row 1: Material Code -->
+                <!-- Row 1: Material Code + Material Name -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/lbl_material_code_txt"
-                        style="@style/TitleViewItemTextStyle"
-                        android:layout_width="match_parent"
+                    <!-- Material Code -->
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="5dp"
-                        android:text="@string/material_code" />
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingEnd="8dp">
 
-                    <TextView
-                        android:id="@+id/val_material_code_txt"
-                        style="@style/ValueViewItemTextStyle"
-                        android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/lbl_material_code_txt"
+                            style="@style/TitleViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/material_code" />
+
+                        <TextView
+                            android:id="@+id/val_material_code_txt"
+                            style="@style/ValueViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-" />
+                    </LinearLayout>
+
+                    <!-- Material Name -->
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/lbl_material_code_txt"
-                        android:layout_centerHorizontal="true"
-                        android:text="-" />
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="8dp">
+
+                        <TextView
+                            android:id="@+id/lbl_material_name_txt"
+                            style="@style/TitleViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/material_name" />
+
+                        <TextView
+                            android:id="@+id/val_material_name_txt"
+                            style="@style/ValueViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-" />
+                    </LinearLayout>
                 </LinearLayout>
 
-                <!-- Row 2: Material Name -->
+                <!-- Row 2: Rack Code + Inward Date -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/lbl_material_name_txt"
-                        style="@style/TitleViewItemTextStyle"
-                        android:layout_width="match_parent"
+                    <!-- Rack Code -->
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="5dp"
-                        android:text="@string/material_name" />
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingEnd="8dp">
 
-                    <TextView
-                        android:id="@+id/val_material_name_txt"
-                        style="@style/ValueViewItemTextStyle"
-                        android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/lbl_rackcode_txt"
+                            style="@style/TitleViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/RackCode" />
+
+                        <TextView
+                            android:id="@+id/val_lbl_rackcode_txt"
+                            style="@style/ValueViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-" />
+                    </LinearLayout>
+
+                    <!-- Inward Date -->
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/lbl_material_name_txt"
-                        android:layout_centerHorizontal="true"
-                        android:text="-" />
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="8dp">
+
+                        <TextView
+                            android:id="@+id/lbl_inwardDtate_txt"
+                            style="@style/TitleViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/inward_Date" />
+
+                        <TextView
+                            android:id="@+id/val_inwardDtate_txt"
+                            style="@style/ValueViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-" />
+                    </LinearLayout>
                 </LinearLayout>
 
-
+                <!-- Row 3: Packing Std + Quantity -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/lbl_rackcode_txt"
-                        style="@style/TitleViewItemTextStyle"
-                        android:layout_width="match_parent"
+                    <!-- Packing Std -->
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="5dp"
-                        android:text="@string/RackCode" />
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingEnd="8dp">
 
-                    <TextView
-                        android:id="@+id/val_lbl_rackcode_txt"
-                        style="@style/ValueViewItemTextStyle"
-                        android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/lbl_packingStd_txt"
+                            style="@style/TitleViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/packingstd" />
+
+                        <TextView
+                            android:id="@+id/val_packingStd_txt"
+                            style="@style/ValueViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-" />
+                    </LinearLayout>
+
+                    <!-- Quantity -->
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/lbl_rackcode_txt"
-                        android:layout_centerHorizontal="true"
-                        android:text="-" />
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="8dp">
+
+                        <TextView
+                            android:id="@+id/lbl_quantity_txt"
+                            style="@style/TitleViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/quantity" />
+
+                        <TextView
+                            android:id="@+id/val_quantity_txt"
+                            style="@style/ValueViewItemTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="-" />
+                    </LinearLayout>
                 </LinearLayout>
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/lbl_inwardDtate_txt"
-                        style="@style/TitleViewItemTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="5dp"
-                        android:text="@string/inward_Date" />
-
-                    <TextView
-                        android:id="@+id/val_inwardDtate_txt"
-                        style="@style/ValueViewItemTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/lbl_inwardDtate_txt"
-                        android:layout_centerHorizontal="true"
-                        android:text="-" />
-                </LinearLayout>
-
-                <!-- Row 3: Packing Standard -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/lbl_packingStd_txt"
-                        style="@style/TitleViewItemTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="5dp"
-                        android:text="@string/packingstd" />
-
-                    <TextView
-                        android:id="@+id/val_packingStd_txt"
-                        style="@style/ValueViewItemTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/lbl_packingStd_txt"
-                        android:layout_centerHorizontal="true"
-                        android:text="-" />
-                </LinearLayout>
-
-                <!-- Row 4: Quantity -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/lbl_quantity_txt"
-                        style="@style/TitleViewItemTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="5dp"
-                        android:text="@string/quantity" />
-
-                    <TextView
-                        android:id="@+id/val_quantity_txt"
-                        style="@style/ValueViewItemTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/lbl_quantity_txt"
-                        android:layout_centerHorizontal="true"
-                        android:text="-" />
-                </LinearLayout>
-
+                <!-- Row 4: Status (alone) -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -204,8 +210,6 @@
                         style="@style/TitleViewItemTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="5dp"
                         android:text="@string/status" />
 
                     <TextView
@@ -213,11 +217,10 @@
                         style="@style/ValueViewItemTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/lbl_status_txt"
-                        android:layout_centerHorizontal="true"
                         android:text="-" />
                 </LinearLayout>
 
+                <!-- Progress Bar -->
                 <RelativeLayout
                     android:id="@+id/rlt_atvty_progress"
                     android:layout_width="match_parent"
@@ -234,6 +237,7 @@
                         android:indeterminateTint="@color/app_color" />
                 </RelativeLayout>
 
+                <!-- Submit Button -->
                 <Button
                     android:id="@+id/btn_submit"
                     android:layout_width="match_parent"
@@ -241,10 +245,7 @@
                     android:layout_marginTop="24dp"
                     android:layout_marginBottom="24dp"
                     android:text="Scan RFID" />
-
             </LinearLayout>
-
-
         </ScrollView>
 
     </RelativeLayout>

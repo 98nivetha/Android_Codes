@@ -1,13 +1,16 @@
 package com.zebra.demo.view.fragment;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
+
 import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.zebra.demo.R;
 import com.zebra.demo.data.remote.model.AssetAudit;
@@ -22,6 +25,7 @@ import com.zebra.demo.viewmodel.AssetAuditScanViewModel;
 import com.zebra.demo.zebralib.ActiveDeviceActivity;
 import com.zebra.demo.zebralib.rfidreader.inventory.InventoryListItem;
 import com.zebra.rfid.api3.ENUM_TRIGGER_MODE;
+
 import java.util.ArrayList;
 import java.util.List;
 

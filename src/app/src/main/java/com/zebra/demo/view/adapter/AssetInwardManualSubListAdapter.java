@@ -1,14 +1,19 @@
 package com.zebra.demo.view.adapter;
+
+
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.zebra.demo.R;
 import com.zebra.demo.data.remote.model.AssetInwardAutoResponse;
 import com.zebra.demo.databinding.ListItemSubManualAssetInwardBinding;
 import com.zebra.demo.utility.Utility;
 import com.zebra.demo.view.listener.RecyclerAssetInwardViewItemClickListener;
+
 import java.util.List;
 
 /*AssetInwardManualListAdapter*/

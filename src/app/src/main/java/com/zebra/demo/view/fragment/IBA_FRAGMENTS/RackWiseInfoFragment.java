@@ -52,6 +52,13 @@ public class RackWiseInfoFragment extends BarcodeRFIDScanBaseFragment implements
         materialAdapter = new MaterialAdapter();
         binding.rvMaterials.setAdapter(materialAdapter);
         binding.rvMaterials.setLayoutManager(new LinearLayoutManager(getContext()));
+        rockWiseInfoViewModel.isDataLoading.observe(getViewLifecycleOwner(), isLoading -> {
+            if (isLoading != null && isLoading) {
+                binding.rltAtvtyProgress.setVisibility(View.VISIBLE);
+            } else {
+                binding.rltAtvtyProgress.setVisibility(View.GONE);
+            }
+        });
         binding.setRackwise(rockWiseInfoViewModel);
         binding.setLifecycleOwner(getViewLifecycleOwner());
         if (isPageInitLoad) {

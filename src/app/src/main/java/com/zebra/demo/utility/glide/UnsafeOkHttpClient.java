@@ -1,5 +1,7 @@
 package com.zebra.demo.utility.glide;
+
 import java.security.cert.CertificateException;
+
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;

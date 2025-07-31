@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <data>
-
         <variable
             name="rackwise"
             type="com.zebra.demo.viewmodel.RockWiseInfoViewModel" />
@@ -12,37 +9,47 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <TextView
+            android:id="@+id/centerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="@string/rack_wise_info"
+            android:textSize="24sp"
+            android:textStyle="bold"  />
         <ScrollView
-            android:id="@+id/scroll_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    android:id="@+id/ewrp_rack"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <LinearLayout
                     style="@style/EditControlWrapperStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/centerText"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/elbl_rack"
                         style="@style/TextInputLayoutStyle"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_toStartOf="@id/qr_icon"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="10dp"
                         app:endIconMode="dropdown_menu">
 
                         <com.google.android.material.textfield.MaterialAutoCompleteTextView
                             android:id="@+id/ectl_rack"
                             style="@style/AutoCompleteTextViewStyle"
-                            android:layout_width="280dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/RackCode"
                             android:text="" />
@@ -50,67 +57,74 @@
 
                     <ImageView
                         android:id="@+id/qr_icon"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_alignTop="@id/elbl_rack"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="14dp"
-                        android:layout_marginRight="50dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:clickable="true"
                         android:focusable="true"
+                        android:layout_marginTop="10dp"
                         android:src="@drawable/qrcode" />
-                </RelativeLayout>
+                </LinearLayout>
 
-                <RelativeLayout
-                    android:id="@+id/rackfirstrlay"
-                    android:layout_width="wrap_content"
+
+                <!-- Rack name display -->
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp">
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rack"
+                        android:layout_marginEnd="8dp"
+                        android:text="Rack:"
                         android:textColor="@android:color/darker_gray"
-                        android:textSize="22sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/txtRackName"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="60dp"
-                        android:layout_marginTop="3dp"
-                        android:paddingBottom="8dp"
+                        android:layout_weight="1"
                         android:text='@{rackwise.selectedRackLiveData.rackname}'
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
+                </LinearLayout>
 
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/racksecondrlay"
+                <!-- Material List Title -->
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp">
+                    android:layout_marginBottom="8dp"
+                    android:text="Material List"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <RelativeLayout
+                    android:id="@+id/rlt_atvty_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#80000000"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:visibility="gone">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
-                        android:text="Material List"
-                        android:textColor="@android:color/darker_gray"
-                        android:textSize="22sp" />
-
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rvMaterials"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="32dp"
-                        android:layout_marginBottom="16dp"
-                        android:nestedScrollingEnabled="false" />
+                    <ProgressBar
+                        android:id="@+id/pbr_atvty_progress"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:indeterminate="true"
+                        android:indeterminateTint="@color/app_color" />
                 </RelativeLayout>
+
+                <!-- Material RecyclerView -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMaterials"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:nestedScrollingEnabled="false" />
             </LinearLayout>
         </ScrollView>
     </RelativeLayout>

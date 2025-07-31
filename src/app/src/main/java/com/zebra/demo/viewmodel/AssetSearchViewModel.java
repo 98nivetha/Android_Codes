@@ -1,6 +1,8 @@
 package com.zebra.demo.viewmodel;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
 import com.zebra.demo.data.remote.exception.ErrorResource;
 import com.zebra.demo.data.remote.exception.ExceptionHandler;
 import com.zebra.demo.data.remote.listener.ExceptionHandlerListener;
@@ -18,6 +20,7 @@ import com.zebra.demo.data.remote.model.FilterAssetRFIDMappingData;
 import com.zebra.demo.data.remote.model.FilterAssetRFIDMappingResponse;
 import com.zebra.demo.data.remote.repository.TagMappingRepository;
 import com.zebra.demo.view.listener.ApiResponseListener;
+
 import java.util.List;
 
 public class AssetSearchViewModel extends ViewModel {

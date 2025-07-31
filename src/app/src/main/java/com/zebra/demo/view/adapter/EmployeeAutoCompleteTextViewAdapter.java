@@ -1,11 +1,15 @@
 package com.zebra.demo.view.adapter;
+
 import android.content.Context;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import com.zebra.demo.data.remote.model.EmployeeDetail;
+
 import java.util.ArrayList;
 import java.util.List;
 

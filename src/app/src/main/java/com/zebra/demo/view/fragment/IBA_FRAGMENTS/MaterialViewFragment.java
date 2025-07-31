@@ -20,7 +20,6 @@ import com.zebra.demo.view.listener.RecyclerViewItemClickListener;
 import com.zebra.demo.viewmodel.MaterialViewViewModel;
 import com.zebra.demo.zebralib.ActiveDeviceActivity;
 import com.zebra.demo.zebralib.rfidreader.inventory.InventoryListItem;
-
 import java.util.List;
 
 public class MaterialViewFragment extends BarcodeRFIDScanBaseFragment implements BarcodeRFIDScanResultListener, RecyclerViewItemClickListener, ApiResponseListener {
@@ -34,6 +33,13 @@ public class MaterialViewFragment extends BarcodeRFIDScanBaseFragment implements
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_materialview, container, false);
         materialViewViewModel = new ViewModelProvider(this).get(MaterialViewViewModel.class);
         binding.setMaterialview(materialViewViewModel);
+        materialViewViewModel.isDataLoading.observe(getViewLifecycleOwner(), isLoading -> {
+            if (isLoading != null && isLoading) {
+                binding.rltAtvtyProgress.setVisibility(View.VISIBLE);
+            } else {
+                binding.rltAtvtyProgress.setVisibility(View.GONE);
+            }
+        });
         setOnClickListener();
         setObserver();
         return binding.getRoot();

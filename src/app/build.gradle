@@ -54,7 +54,7 @@ android {
 
             /*Dev*/
             //buildConfigField( "String", "API_URL_LOGIN", "\"http://pfizerservice.agaraminfotech.com\"")
-            buildConfigField "String", "API_URL", "\"http://ibaservice.agaraminfotech.com/\""
+            buildConfigField( "String", "API_URL", "\"http://ibaservice.agaraminfotech.com\"")
             //buildConfigField( "String", "AUTHORIZATION", "\"HL\$7123_999\"")
             //buildConfigField( "String", "CLIENT_ID", "\"B\"")
 
@@ -77,7 +77,7 @@ android {
 
             /*Dev*/
             //buildConfigField( "String", "API_URL_LOGIN", "\"http://pfizerservice.agaraminfotech.com\"")
-            buildConfigField "String", "API_URL", "\"http://ibaservice.agaraminfotech.com/\""
+            buildConfigField( "String", "API_URL", "\"http://ibaservice.agaraminfotech.com\"")
             //buildConfigField( "String", "AUTHORIZATION", "\"HL\$7123_999\"")
             //buildConfigField( "String", "CLIENT_ID", "\"B\"")
 
