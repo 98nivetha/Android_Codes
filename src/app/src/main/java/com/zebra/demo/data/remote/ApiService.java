@@ -28,6 +28,7 @@ import com.zebra.demo.data.remote.model.UpdateAssetRFIDMappingRequest;
 import com.zebra.demo.data.remote.model.UpdateAssetRFIDMappingResponse;
 import com.zebra.demo.data.remote.requestmodels.PutAwayScanningRequest;
 import com.zebra.demo.data.remote.requestmodels.ReturnPartsValidInfoRequest;
+//import com.zebra.demo.data.remote.requestmodels.StockInwardRequest;
 import com.zebra.demo.data.remote.requestmodels.StockInwardRequest;
 import com.zebra.demo.data.remote.responsemodels.GetAllMaterialInfoMainResponse;
 import com.zebra.demo.data.remote.responsemodels.GetAllRackDatasResponse;
