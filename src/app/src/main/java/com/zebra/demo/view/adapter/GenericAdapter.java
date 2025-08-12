@@ -4,9 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.zebra.demo.view.listener.RecyclerViewItemClickListener;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
@@ -35,12 +33,6 @@ public class GenericAdapter<T> extends RecyclerView.Adapter<GenericAdapter<T>.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         T item = itemList.get(position);
         bindFunction.accept(item, holder.itemView);
-        holder.itemView.setOnClickListener(v -> {
-            if (recyclerViewItemClickListener != null) {
-                recyclerViewItemClickListener.onRecyclerViewItemClickListener(position, item);
-            }
-        });
-
     }
 
     @Override
@@ -67,6 +59,14 @@ public class GenericAdapter<T> extends RecyclerView.Adapter<GenericAdapter<T>.Vi
         itemList.addAll(newList);
         notifyDataSetChanged();
     }
+    public void clearItems() {
+        if (itemList != null && !itemList.isEmpty()) {
+            int size = itemList.size();
+            itemList.clear();
+            notifyItemRangeRemoved(0, size);
+        }
+    }
+
 
 }
 

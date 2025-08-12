@@ -1,8 +1,10 @@
 package com.zebra.demo.data.remote.requestmodels;
+
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class StockInwardRequest {
+
     @SerializedName("IbaIvmInvStockinwardPackDetail")
     private List<IbaIvmInvStockinwardPackDetail> IbaIvmInvStockinwardPackDetail;
 
@@ -19,67 +21,67 @@ public class StockInwardRequest {
     }
 
     public static class IbaIvmInvStockinwardPackDetail {
-        private int Packid;
-        private int Detailid;
-        private int Inwardid;
-        private int Modelid;
+
+        private Integer Packid;
+        private Integer Detailid;
+        private Integer Inwardid;
+        private Integer Modelid;
         private String Modelname;
-        private int Materialid;
+        private Integer Materialid;
         private String Materialname;
-        private int Quantity;
+        private Integer Quantity;
         private String Rfid;
-        private int Status;
-        private int Createby;
+        private Integer Status;
+        private Integer Createby;
         private String Createdon;
-        private int Modifiedby;
+        private Integer Modifiedby;
         private String Modifiedon;
-        private int Rackid;
+        private Integer Rackid;
 
-        // Getters and Setters
-        public int getPackid() { return Packid; }
-        public void setPackid(int packid) { this.Packid = packid; }
+        // Getters with default values to avoid null issues
+        public int getPackid() { return Packid != null ? Packid : 0; }
+        public void setPackid(Integer packid) { this.Packid = packid; }
 
-        public int getDetailid() { return Detailid; }
-        public void setDetailid(int detailid) { this.Detailid = detailid; }
+        public int getDetailid() { return Detailid != null ? Detailid : 0; }
+        public void setDetailid(Integer detailid) { this.Detailid = detailid; }
 
-        public int getInwardid() { return Inwardid; }
-        public void setInwardid(int inwardid) { this.Inwardid = inwardid; }
+        public int getInwardid() { return Inwardid != null ? Inwardid : 0; }
+        public void setInwardid(Integer inwardid) { this.Inwardid = inwardid; }
 
-        public int getModelid() { return Modelid; }
-        public void setModelid(int modelid) { this.Modelid = modelid; }
+        public int getModelid() { return Modelid != null ? Modelid : 0; }
+        public void setModelid(Integer modelid) { this.Modelid = modelid; }
 
-        public String getModelname() { return Modelname; }
+        public String getModelname() { return Modelname != null ? Modelname : ""; }
         public void setModelname(String modelname) { this.Modelname = modelname; }
 
-        public int getMaterialid() { return Materialid; }
-        public void setMaterialid(int materialid) { this.Materialid = materialid; }
+        public int getMaterialid() { return Materialid != null ? Materialid : 0; }
+        public void setMaterialid(Integer materialid) { this.Materialid = materialid; }
 
-        public String getMaterialname() { return Materialname; }
+        public String getMaterialname() { return Materialname != null ? Materialname : ""; }
         public void setMaterialname(String materialname) { this.Materialname = materialname; }
 
-        public int getQuantity() { return Quantity; }
-        public void setQuantity(int quantity) { this.Quantity = quantity; }
+        public int getQuantity() { return Quantity != null ? Quantity : 0; }
+        public void setQuantity(Integer quantity) { this.Quantity = quantity; }
 
-        public String getRfid() { return Rfid; }
+        public String getRfid() { return Rfid != null ? Rfid : ""; }
         public void setRfid(String rfid) { this.Rfid = rfid; }
 
-        public int getStatus() { return Status; }
-        public void setStatus(int status) { this.Status = status; }
+        public int getStatus() { return Status != null ? Status : 0; }
+        public void setStatus(Integer status) { this.Status = status; }
 
-        public int getCreateby() { return Createby; }
-        public void setCreateby(int createby) { this.Createby = createby; }
+        public int getCreateby() { return Createby != null ? Createby : 0; }
+        public void setCreateby(Integer createby) { this.Createby = createby; }
 
-        public String getCreatedon() { return Createdon; }
+        public String getCreatedon() { return Createdon != null ? Createdon : ""; }
         public void setCreatedon(String createdon) { this.Createdon = createdon; }
 
-        public int getModifiedby() { return Modifiedby; }
-        public void setModifiedby(int modifiedby) { this.Modifiedby = modifiedby; }
+        public int getModifiedby() { return Modifiedby != null ? Modifiedby : 0; }
+        public void setModifiedby(Integer modifiedby) { this.Modifiedby = modifiedby; }
 
-        public String getModifiedon() { return Modifiedon; }
+        public String getModifiedon() { return Modifiedon != null ? Modifiedon : ""; }
         public void setModifiedon(String modifiedon) { this.Modifiedon = modifiedon; }
 
-        public int getRackid() { return Rackid; }
-        public void setRackid(int rackid) { this.Rackid = rackid; }
+        public int getRackid() { return Rackid != null ? Rackid : 0; }
+        public void setRackid(Integer rackid) { this.Rackid = rackid; }
     }
 }
-

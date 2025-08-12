@@ -6,6 +6,8 @@
     android:layout_margin="12dp"
     android:padding="16dp"
     card_view:cardCornerRadius="12dp"
+    android:clickable="true"
+    android:focusable="true"
     card_view:cardElevation="6dp">
 
     <LinearLayout
@@ -23,7 +25,9 @@
             android:layout_gravity="end"
             android:layout_marginEnd="8dp"
             android:contentDescription="Validation icon"
-            android:padding="4dp" />
+            android:padding="4dp"
+            android:focusableInTouchMode="false" />
+
 
         <!-- Row 1: Code + Name -->
         <LinearLayout

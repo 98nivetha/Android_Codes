@@ -35,8 +35,6 @@ public class MaterialAdapter extends RecyclerView.Adapter<MaterialAdapter.ViewHo
             name = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
         }
         holder.txtMaterialName.setText(name);
-
-//        holder.txtMaterialName.setText(material.getMaterialname());
         holder.txtMaterialCode.setText("Code: " + material.getMaterialcode());
         holder.txtQuantity.setText("Qty: " + material.getQuantity());
         holder.txtPackingStandard.setText("Pack Std: " + material.getPackingstandard());

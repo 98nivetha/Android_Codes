@@ -115,7 +115,7 @@ public class ReturnPartsValidInfoResponse {
         private String rackgroup;
 
         @SerializedName("Racktype")
-        private String racktype;
+        private boolean racktype;
 
         @SerializedName("Stockoutdate")
         private String stockoutdate;
@@ -150,7 +150,7 @@ public class ReturnPartsValidInfoResponse {
             rackid = in.readInt();
             rackcode = in.readString();
             rackgroup = in.readString();
-            racktype = in.readString();
+            racktype = in.readByte() != 0;
             stockoutdate = in.readString();
             status = in.readInt();
             createby = in.readInt();
@@ -158,7 +158,18 @@ public class ReturnPartsValidInfoResponse {
             modifiedby = in.readInt();
             modifiedon = in.readString();
         }
-
+        @Override
+        public String toString() {
+            return "ValidItem{" +
+                    "packid='" + packid + '\'' +
+                    ", detailid='" + detailid + '\'' +
+                    ", inwardid='" + inwardid + '\'' +
+                    ", modelid='" + modelid + '\'' +
+                    ", materialname='" + materialname + '\'' +
+                    ", quantity=" + quantity +
+                    // Add any other fields you want to log
+                    '}';
+        }
         public static final Parcelable.Creator<ValidItem> CREATOR = new Creator<ValidItem>() {
             @Override
             public ValidItem createFromParcel(Parcel in) {
@@ -187,7 +198,7 @@ public class ReturnPartsValidInfoResponse {
             dest.writeInt(rackid);
             dest.writeString(rackcode);
             dest.writeString(rackgroup);
-            dest.writeString(racktype);
+            dest.writeByte((byte) (racktype ? 1 : 0));
             dest.writeString(stockoutdate);
             dest.writeInt(status);
             dest.writeInt(createby);
@@ -200,28 +211,92 @@ public class ReturnPartsValidInfoResponse {
         public int describeContents() {
             return 0;
         }
+
         // Getters
-        public int getPackid() { return packid; }
-        public int getDetailid() { return detailid; }
-        public int getInwardid() { return inwardid; }
-        public int getModelid() { return modelid; }
-        public int getMaterialid() { return materialid; }
-        public String getMaterialcode() { return materialcode; }
-        public String getMaterialname() { return materialname; }
-        public boolean isCci() { return cci; }
-        public int getActualrack() { return actualrack; }
-        public int getQuantity() { return quantity; }
-        public String getRfid() { return rfid; }
-        public int getRackid() { return rackid; }
-        public String getRackcode() { return rackcode; }
-        public String getRackgroup() { return rackgroup; }
-        public String getRacktype() { return racktype; }
-        public String getStockoutdate() { return stockoutdate; }
-        public int getStatus() { return status; }
-        public int getCreateby() { return createby; }
-        public String getCreatedon() { return createdon; }
-        public int getModifiedby() { return modifiedby; }
-        public String getModifiedon() { return modifiedon; }
+        public int getPackid() {
+            return packid;
+        }
+
+        public int getDetailid() {
+            return detailid;
+        }
+
+        public int getInwardid() {
+            return inwardid;
+        }
+
+        public int getModelid() {
+            return modelid;
+        }
+
+        public int getMaterialid() {
+            return materialid;
+        }
+
+        public String getMaterialcode() {
+            return materialcode;
+        }
+
+        public String getMaterialname() {
+            return materialname;
+        }
+
+        public boolean isCci() {
+            return cci;
+        }
+
+        public int getActualrack() {
+            return actualrack;
+        }
+
+        public int getQuantity() {
+            return quantity;
+        }
+
+        public String getRfid() {
+            return rfid;
+        }
+
+        public int getRackid() {
+            return rackid;
+        }
+
+        public String getRackcode() {
+            return rackcode;
+        }
+
+        public String getRackgroup() {
+            return rackgroup;
+        }
+
+        public Boolean getRacktype() {
+            return racktype;
+        }
+
+        public String getStockoutdate() {
+            return stockoutdate;
+        }
+
+        public int getStatus() {
+            return status;
+        }
+
+        public int getCreateby() {
+            return createby;
+        }
+
+        public String getCreatedon() {
+            return createdon;
+        }
+
+        public int getModifiedby() {
+            return modifiedby;
+        }
+
+        public String getModifiedon() {
+            return modifiedon;
+        }
     }
+
 
 }

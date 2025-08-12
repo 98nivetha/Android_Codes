@@ -32,57 +32,50 @@
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
-                <!--                <LinearLayout-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_margin="15dp"-->
-                <!--                    android:orientation="vertical">-->
 
-                <!--                    <com.google.android.material.button.MaterialButtonToggleGroup-->
-                <!--                        android:id="@+id/mappingTGtp"-->
-                <!--                        android:layout_width="wrap_content"-->
-                <!--                        android:layout_height="wrap_content"-->
-                <!--                        android:layout_gravity="center_horizontal"-->
-                <!--                        app:checkedButton="@+id/good_part_btn"-->
-                <!--                        app:singleSelection="true">-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
 
-                <!--                        <com.google.android.material.button.MaterialButton-->
-                <!--                            android:id="@+id/good_part_btn"-->
-                <!--                            style="?attr/materialButtonOutlinedStyle"-->
-                <!--                            android:layout_width="wrap_content"-->
-                <!--                            android:layout_height="60dp"-->
-                <!--                            android:fontFamily="@font/arial_bold"-->
-                <!--                            android:text="@string/goodText"-->
-                <!--                            android:textAllCaps="false"-->
-                <!--                            app:cornerRadius="20dp"-->
-                <!--                            app:strokeColor="@color/app_color" />-->
+                    <Button
+                        android:id="@+id/scanButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/SCAN"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                <!--                        <com.google.android.material.button.MaterialButton-->
-                <!--                            android:id="@+id/defective_part_btn"-->
-                <!--                            style="?attr/materialButtonOutlinedStyle"-->
-                <!--                            android:layout_width="wrap_content"-->
-                <!--                            android:layout_height="60dp"-->
-                <!--                            android:fontFamily="@font/arial_bold"-->
-                <!--                            android:text="@string/defectiveText"-->
-                <!--                            android:textAllCaps="false"-->
-                <!--                            app:cornerRadius="20dp"-->
-                <!--                            app:strokeColor="@color/app_color" />-->
+<!--                    <Button-->
+<!--                        android:id="@+id/submitButton"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="8dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="@string/submit"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textStyle="bold" />-->
+                </LinearLayout>
 
-                <!--                    </com.google.android.material.button.MaterialButtonToggleGroup>-->
-                <!--                </LinearLayout>-->
-<!--                <androidx.recyclerview.widget.RecyclerView-->
-<!--                    android:id="@+id/recyclerView"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_below="@id/buttonLayout"-->
-<!--                    android:layout_marginTop="20dp"-->
-<!--                    android:padding="8dp"-->
-<!--                    android:visibility="gone" />-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/buttonLayout"
+                    android:layout_marginTop="20dp"
+                    android:padding="8dp"
+                    android:visibility="gone" />
+
 
                 <RelativeLayout
                     android:id="@+id/rlt_atvty_progress"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#80000000"
                     android:clickable="true"
                     android:focusable="true"
                     android:gravity="center"
@@ -92,6 +85,7 @@
                         android:id="@+id/pbr_atvty_progress"
                         android:layout_width="65dp"
                         android:layout_height="65dp"
+                        android:indeterminate="true"
                         android:indeterminateTint="@color/app_color" />
                 </RelativeLayout>
             </LinearLayout>

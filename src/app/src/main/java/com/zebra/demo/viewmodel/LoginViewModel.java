@@ -1,16 +1,8 @@
 package com.zebra.demo.viewmodel;
-
-import static androidx.core.content.ContentProviderCompat.requireContext;
-
-import static java.security.AccessController.getContext;
-
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
-
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
 import com.zebra.demo.data.remote.exception.ErrorResource;
 import com.zebra.demo.data.remote.exception.ExceptionHandler;
 import com.zebra.demo.data.remote.listener.ExceptionHandlerListener;

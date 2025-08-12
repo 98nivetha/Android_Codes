@@ -1,5 +1,4 @@
 package com.zebra.demo.zebralib;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -14,14 +13,11 @@ import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
-
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-
 import com.zebra.demo.R;
 import com.zebra.ASCII_SDK.Command_Log;
 import com.zebra.ASCII_SDK.Response_Status;
-import com.zebra.demo.zebralib.application.Application;
 import com.zebra.demo.zebralib.rfidreader.rfid.RFIDController;
 import com.zebra.rfid.api3.InvalidUsageException;
 import com.zebra.rfid.api3.IRFIDLogger;
@@ -29,8 +25,6 @@ import com.zebra.rfid.api3.ReaderDevice;
 import com.zebra.rfid.api3.OperationFailureException;
 
 public class LoggerFragment extends Fragment {
-
-
     public static final String SHARED_PREF_NAME             = "Switch";
     public static final String REALTIMELOGGERSTATE          = "REALTIMELOGGER_STATE";
     public static final String DEBUGLOGGERSTATE             = "DEBUGLOGGER_STATE";
@@ -83,7 +77,6 @@ public class LoggerFragment extends Fragment {
             Toast.makeText(getActivity(), "Reader not connected", Toast.LENGTH_SHORT).show();
 
         }
-
         // setting switch button for application debug logging
         DebugLoggerEnableButton = (Switch) rootview.findViewById(com.zebra.demo.R.id.enablelogger_switch);
         // setting switch button for real time logs
@@ -98,7 +91,6 @@ public class LoggerFragment extends Fragment {
         retrieveramlogbtn = (Button)rootview.findViewById(R.id.ramlogbutton);
         // Checkbox for retrieving internal flash logs
         retrieveflashlogbtn = (Button)rootview.findViewById(R.id.flashlogbutton);
-
         // get real time logger state from RFID service
         if(rfidLogger != null ) {
 

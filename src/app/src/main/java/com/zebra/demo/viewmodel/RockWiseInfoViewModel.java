@@ -37,7 +37,7 @@ public class RockWiseInfoViewModel extends ViewModel {
             return;
         }
         isDataLoading.setValue(true);
-        String rawJson = "{ \"Rackcode\": \"\" }";
+        String rawJson = "{ \"Qrcode\": \"\" }";
         Log.d("VIEW_MODEL", "getAllRocks Request JSON: " + rawJson);
 
         RockWiseInfoRepository rockWiseInfoRepository = RockWiseInfoRepository.getInstance();
@@ -49,7 +49,7 @@ public class RockWiseInfoViewModel extends ViewModel {
                 if (response != null && response.Data != null && response.Data.D_RackDetails != null) {
                     List<RackDetails> rackDetailsList = response.Data.D_RackDetails;
                     for (RackDetails rack : rackDetailsList) {
-                        Log.d("RACK_ITEM", "Rack Name: " + rack.getRackname());
+                        Log.d("RACK_ITEM", "Rack Name: " + rack.getRackcode());
                     }
 
                     rackDetailMutableLiveData.setValue(rackDetailsList);

@@ -1,5 +1,4 @@
 package com.zebra.demo.view.fragment;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,20 +7,18 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-
 import com.zebra.demo.R;
 import com.zebra.demo.data.local.SharedPreference;
 import com.zebra.demo.databinding.FragmentMainMenuBinding;
 import com.zebra.demo.view.activity.LoginActivity;
 import com.zebra.demo.view.activity.MainActivity;
-import com.zebra.demo.view.fragment.IBA_FRAGMENTS.InventoryReportFragment;
 import com.zebra.demo.view.fragment.IBA_FRAGMENTS.MaterialViewFragment;
+import com.zebra.demo.view.fragment.IBA_FRAGMENTS.PickListFragment;
 import com.zebra.demo.view.fragment.IBA_FRAGMENTS.PutAwayFragment;
 import com.zebra.demo.view.fragment.IBA_FRAGMENTS.RFIDMappingFragment;
 import com.zebra.demo.view.fragment.IBA_FRAGMENTS.RackWiseInfoFragment;
@@ -100,26 +97,10 @@ public class MainMenuFragment extends Fragment {
         binding.rfidMappingRlay.setOnClickListener(view -> {
             loadFragment(new RFIDMappingFragment()                          );
         });
-
-        //Asset View
-        binding.rfidMappingRlay.setOnClickListener(view -> {
-            //TODO: Comment This call later
-            /*AssetViewFragment fragment = new AssetViewFragment();
-            Bundle bundle = new Bundle();
-            bundle.putString(AssetViewFragment.ASSET_SR_CODE_KEY,"319413");
-            fragment.setArguments(bundle);
-            loadFragment(fragment);*/
-            //TODO: Uncomment This line later
-            loadFragment(new AssetViewFragment());
-
-        });
         binding.putAwayRlay.setOnClickListener(view -> {
             loadFragment(new PutAwayFragment());
         });
-        //Audit
-        binding.auditRlay.setOnClickListener(view -> {
-            loadFragment(new AssetAuditTypeSelectionFragment());
-        });
+
 
         //Asset Search
         binding.materialInfoRlay.setOnClickListener(view -> {
@@ -134,8 +115,8 @@ public class MainMenuFragment extends Fragment {
             loadFragment(new ReAllocateFragment());
         });
 
-        binding.inventoryReportRlay.setOnClickListener(view -> {
-            loadFragment(new InventoryReportFragment());
+        binding.pickListRlay.setOnClickListener(view -> {
+            loadFragment(new PickListFragment());
         });
 
         //Connect To Device

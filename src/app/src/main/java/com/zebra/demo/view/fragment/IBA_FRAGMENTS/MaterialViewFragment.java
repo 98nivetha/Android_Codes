@@ -77,9 +77,10 @@ public class MaterialViewFragment extends BarcodeRFIDScanBaseFragment implements
                     String quantity = Utility.getCommonValue(String.valueOf(value.getData().getV_RfidDetails().getQuantity()));
                     String rackCode = Utility.getCommonValue(String.valueOf(value.getData().getV_RfidDetails().getRackcode()));
                     String inwardDate = Utility.getCommonValue(String.valueOf(value.getData().getV_RfidDetails().getInwarddate()));
+                    String rfidText = Utility.getCommonValue(String.valueOf(value.getData().getV_RfidDetails().getRfid()));
                     Integer status = value.getData().getV_RfidDetails().getStatus();
-                    Log.d("STATUS TEST", "STATUS: " + status);
                     String statusValue = (status != null && status == 1) ? "Active" : "InActive";
+                    binding.valRfidTxt.setText(rfidText);
                     binding.valStatusTxt.setText(statusValue);
                     binding.valStatusTxt.setTextColor("Active".equalsIgnoreCase(statusValue) ? Color.GREEN : Color.RED);
                     binding.valMaterialNameTxt.setText(materialName);

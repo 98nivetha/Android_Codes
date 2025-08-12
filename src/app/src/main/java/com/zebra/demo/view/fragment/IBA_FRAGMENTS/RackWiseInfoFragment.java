@@ -95,11 +95,11 @@ public class RackWiseInfoFragment extends BarcodeRFIDScanBaseFragment implements
 
     private void loadRackDropdown(List<RackDetails> dRackDetailList) {
         if (dRackDetailList != null && !dRackDetailList.isEmpty()) {
-            setAutoCompleteTextView(binding.ectlRack, dRackDetailList, RackDetails::getRackname);
+            setAutoCompleteTextView(binding.ectlRack, dRackDetailList, RackDetails::getRackcode);
         }
         binding.ectlRack.setOnItemClickListener((parent, view, position, id) -> {
             RackDetails selected = dRackDetailList.get(position);
-            binding.ectlRack.setText(selected.getRackname(), false);
+            binding.ectlRack.setText(selected.getRackcode(), false);
             rockWiseInfoViewModel.selectedRack = selected;
             rockWiseInfoViewModel.selectedRackLiveData.setValue(selected);
             rockWiseInfoViewModel.fetchAllMaterialsByRack(this);

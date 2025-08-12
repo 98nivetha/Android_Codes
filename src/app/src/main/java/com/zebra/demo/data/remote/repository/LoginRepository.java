@@ -35,6 +35,8 @@ public class LoginRepository extends BaseApiService {
         if(login != null && login.getData() != null && login.getData().getUserDetails() != null) {
             SharedPreference sharedPreference = new SharedPreference(Application.getAppContext());
             sharedPreference.setUserId(String.valueOf(login.getData().getUserDetails().getUsercode()));
+            sharedPreference.setCreatedByUserId(Integer.valueOf(String.valueOf(login.getData().getUserDetails().getUserid())));
+
             sharedPreference.setUserDeptName(login.getData().getUserDetails().getDepartmentcode());
             sharedPreference.setUserName(login.getData().getUserDetails().getUsername());
             sharedPreference.setToken(login.getData().getToken());

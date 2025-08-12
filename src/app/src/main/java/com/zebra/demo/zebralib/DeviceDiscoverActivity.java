@@ -1,5 +1,4 @@
 package com.zebra.demo.zebralib;
-
 import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -27,7 +26,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
-
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -35,11 +33,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-
 import com.google.android.material.navigation.NavigationView;
 import com.zebra.demo.R;
 import com.zebra.demo.zebralib.application.Application;
-import com.zebra.demo.zebralib.nfc.PairOperationsFragment;
 import com.zebra.demo.zebralib.rfidreader.common.CustomProgressDialog;
 import com.zebra.demo.zebralib.rfidreader.common.CustomToast;
 import com.zebra.demo.zebralib.rfidreader.common.ResponseHandlerInterfaces;
@@ -49,10 +45,7 @@ import com.zebra.demo.zebralib.rfidreader.reader_connection.InitReadersListFragm
 import com.zebra.demo.zebralib.rfidreader.reader_connection.PasswordDialog;
 import com.zebra.demo.zebralib.rfidreader.rfid.RFIDController;
 import com.zebra.demo.zebralib.rfidreader.settings.BatteryFragment;
-import com.zebra.demo.zebralib.rfidreader.settings.SettingsContent;
-import com.zebra.demo.zebralib.rfidreader.settings.SettingsDetailActivity;
 import com.zebra.demo.zebralib.scanner.activities.BaseActivity;
-import com.zebra.demo.zebralib.scanner.activities.NavigationHelpActivity;
 import com.zebra.demo.zebralib.scanner.activities.UpdateFirmware;
 import com.zebra.demo.zebralib.scanner.fragments.ReaderDetailsFragment;
 import com.zebra.demo.zebralib.scanner.helpers.AvailableScanner;
@@ -64,13 +57,9 @@ import com.zebra.rfid.api3.OperationFailureException;
 import com.zebra.rfid.api3.ReaderDevice;
 import com.zebra.rfid.api3.Readers;
 import com.zebra.scannercontrol.DCSSDKDefs;
-
 import java.util.List;
 import java.util.Locale;
-
-import static com.zebra.demo.zebralib.rfidreader.rfid.RFIDController.TAG;
 import static com.zebra.demo.zebralib.rfidreader.rfid.RFIDController.mConnectedReader;
-//import com.zebra.scannercontrol.SDKHandler;
 
 public class DeviceDiscoverActivity extends BaseActivity implements Readers.RFIDReaderEventHandler, ResponseHandlerInterfaces.ReaderDeviceFoundHandler, ResponseHandlerInterfaces.BatteryNotificationHandler, ScannerAppEngine.IScannerAppEngineDevConnectionsDelegate {
 

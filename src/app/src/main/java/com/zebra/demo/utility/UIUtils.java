@@ -1,9 +1,6 @@
 package com.zebra.demo.utility;
-
 import android.content.Context;
-
 import androidx.appcompat.app.AlertDialog;
-
 import com.zebra.demo.view.listener.NetworkRetryListener;
 
 public class UIUtils {
@@ -35,4 +32,5 @@ public class UIUtils {
             builder.create().show();
         }
     }
+
 }

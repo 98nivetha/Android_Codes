@@ -138,7 +138,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/material_info_img"
                                 android:layout_centerHorizontal="true"
-                                android:text="@string/material_view" />
+                                android:text="@string/materialview" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -163,7 +163,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/rackwise_info_img"
                                 android:layout_centerHorizontal="true"
-                                android:text="@string/rack_wise_info" />
+                                android:text="@string/location_wise_view" />
                         </RelativeLayout>
                     </LinearLayout>
 
@@ -241,7 +241,7 @@
                         android:weightSum="2">
 
                         <RelativeLayout
-                            android:id="@+id/inventory_report_rlay"
+                            android:id="@+id/pickList_rlay"
                             android:layout_width="0dp"
                             android:layout_height="150dp"
                             android:layout_marginEnd="10dp"
@@ -249,7 +249,7 @@
                             android:background="@drawable/menu_item_bg">
 
                             <ImageView
-                                android:id="@+id/inventory_report_img"
+                                android:id="@+id/pickList_report_img"
                                 style="@style/MenuItemImgStyle"
                                 android:layout_centerHorizontal="true"
                                 android:contentDescription="@string/logo"
@@ -260,9 +260,9 @@
                                 style="@style/MenuItemTextStyle"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/inventory_report_img"
+                                android:layout_below="@+id/pickList_report_img"
                                 android:layout_centerHorizontal="true"
-                                android:text="@string/inventory_report" />
+                                android:text="@string/pickList" />
                         </RelativeLayout>
 
 

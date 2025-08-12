@@ -18,11 +18,11 @@
     <string name="material_view">Material View</string>
     <string name="rack_wise_info">Rack Wise Info</string>
     <string name="re_allocate">ReAllocate</string>
-    <string name="inventory_report">Inventory Report</string>
+    <string name="pickList">Pick List</string>
     <string name="asset_serial_no">Asset Serial Number</string>
     <string name="sub_asset_no">Sub Asset No</string>
-    <string name="material_name">Material Name</string>
-    <string name="material_code">Material Code</string>
+    <string name="material_name">Part Name</string>
+    <string name="material_code">Part Code</string>
     <string name="quantity">Quantity</string>
     <string name="inward_Date">Inward Date</string>
     <string name="packingstd">Packing Standard</string>
@@ -1324,7 +1324,8 @@
 
     <string name="Company">Inward Code</string>
 
-    <string name="RackCode">Rack Code</string>
+    <string name="RackCode">Location Code</string>
+    <string name="MaterialName">Material Name</string>
     <string name="Building_Name">Building Name</string>
     <string name="Floor">Floor</string>
     <string name="Location">Location</string>
@@ -1333,6 +1334,8 @@
     <string name="Sub_Asset_Part_Code">Sub Asset Part Code</string>
 
     <string name="Inward">Inward</string>
-    <string name="materialview">Material Info</string>
+    <string name="materialview">Part View</string>
+    <string name="location_wise_view">Location Wise View</string>
+
 
 </resources>

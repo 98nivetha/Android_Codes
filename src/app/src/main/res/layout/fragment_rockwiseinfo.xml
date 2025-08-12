@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:text="@string/rack_wise_info"
+            android:text="@string/location_wise_view"
             android:textSize="24sp"
             android:textStyle="bold"  />
         <ScrollView
@@ -77,7 +77,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
-                        android:text="Rack:"
+                        android:text="Location:"
                         android:textColor="@android:color/darker_gray"
                         android:textSize="18sp" />
 
@@ -86,17 +86,16 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text='@{rackwise.selectedRackLiveData.rackname}'
+                        android:text='@{rackwise.selectedRackLiveData.rackcode}'
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
                 </LinearLayout>
 
-                <!-- Material List Title -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Material List"
+                    android:text="Parts List"
                     android:textColor="@android:color/darker_gray"
                     android:textSize="20sp"
                     android:textStyle="bold" />

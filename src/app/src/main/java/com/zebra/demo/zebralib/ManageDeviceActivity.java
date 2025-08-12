@@ -1,13 +1,9 @@
 package com.zebra.demo.zebralib;
-
 import android.os.Bundle;
 import android.view.MenuItem;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-
-
 import com.zebra.demo.R;
 import com.zebra.demo.zebralib.rfidreader.home.RFIDBaseActivity;
 import com.zebra.demo.zebralib.rfidreader.manager.DeviceResetFragment;
@@ -21,9 +17,7 @@ import com.zebra.rfid.api3.Readers;
 import com.zebra.rfid.api3.RfidEventsListener;
 import com.zebra.rfid.api3.RfidReadEvents;
 import com.zebra.rfid.api3.RfidStatusEvents;
-
 import com.zebra.rfid.api3.STATUS_EVENT_TYPE;
-
 
 
 public class ManageDeviceActivity extends AppCompatActivity  implements Readers.RFIDReaderEventHandler, RfidEventsListener {
@@ -101,10 +95,6 @@ public class ManageDeviceActivity extends AppCompatActivity  implements Readers.
 
     @Override
     public void RFIDReaderDisappeared(final ReaderDevice readerDevice) {
-        //Intent intent;
-        //intent = new Intent(getActivity(), DeviceDiscoverActivity.class);
-        //intent.putExtra("enable_toolbar", false);
-        //startActivity(intent);
         runOnUiThread(() -> {
             if (fragment != null) {
                 if (fragment instanceof FactoryResetFragment) {
@@ -124,24 +114,17 @@ public class ManageDeviceActivity extends AppCompatActivity  implements Readers.
     public void onBackPressed() {
         ///super.onBackPressed();
         finish();
-        return;
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        //mRfidBaseActivity.resetReaderstatuscallback();
-        //mRfidBaseActivity.resetEventcallback(this);
-        //finish();
-
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         mRfidBaseActivity.resetReaderstatuscallback();
-
-
     }
 
     @Override
@@ -168,7 +151,6 @@ public class ManageDeviceActivity extends AppCompatActivity  implements Readers.
                     ((DeviceResetFragment) fragment).eventStatusNotify(rfidStatusEvents);
                 }
             }
-
             RFIDController.mConnectedReader = null;
         }
     }

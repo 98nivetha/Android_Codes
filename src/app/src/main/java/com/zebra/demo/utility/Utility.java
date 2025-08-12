@@ -1,16 +1,14 @@
 package com.zebra.demo.utility;
-
 import android.app.Activity;
 import android.widget.Toast;
-
-
 import com.zebra.demo.zebralib.ActiveDeviceActivity;
 import com.zebra.demo.zebralib.application.Application;
 import com.zebra.demo.zebralib.rfidreader.rfid.RFIDController;
-
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Matcher;
@@ -53,6 +51,19 @@ public class Utility {
         } catch (ParseException | NullPointerException e) {
             return "";
         }
+    }
+    public static LocalDateTime parseServerDateToLocalDateTime(String serverDate) {
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+            return LocalDateTime.parse(serverDate, formatter);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    public static String formatLocalDateTimeToServer(LocalDateTime dateTime) {
+        if (dateTime == null) return "";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+        return dateTime.format(formatter);
     }
 
     public static String getCreateQuotationDateTime() {
@@ -184,6 +195,25 @@ public class Utility {
         Matcher matcher = pattern.matcher(domain);
 
         return matcher.matches();
+    }
+    public static LocalDateTime getCurrentDateTimeNew() {
+        return LocalDateTime.now();
+    }
+
+    // If you need the formatted string elsewhere, create a separate method:
+    public static String getCurrentDateTimeString() {
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        return sdf1.format(c.getTime()) + ".000Z";
+    }
+
+    // Option 2: Keep your existing method and parse it back to LocalDateTime
+    public static LocalDateTime getCurrentDateTimeAsLocalDateTime() {
+        String dateTimeString = getCurrentDateTime();
+        // Remove the 'Z' suffix and milliseconds for parsing
+        String cleanDateTime = dateTimeString.replace(".000Z", "");
+        return LocalDateTime.parse(cleanDateTime, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
     }
 
 }

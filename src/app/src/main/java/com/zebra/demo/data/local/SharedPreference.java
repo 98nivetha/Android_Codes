@@ -1,6 +1,8 @@
 package com.zebra.demo.data.local;
+
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import com.google.gson.Gson;
 import com.zebra.demo.data.remote.model.Login;
 
@@ -18,6 +20,7 @@ public class SharedPreference {
     private String USER_ACCESS_TOKEN = "user_access_token";
     private String USER_LOGIN_RESPONSE = "user_login_response";
     private String APP_API_DOMAIN = "app_api_domain";
+    private static final String CREATED_BY_USERID_KEY = "CREATED_BY_USERID";
 
 
     /**
@@ -34,8 +37,7 @@ public class SharedPreference {
      * @return true if user logged in else false
      */
     public boolean isLoggedIn() {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         return preferences.getBoolean(IS_LOGIN, false);
     }
 
@@ -46,8 +48,7 @@ public class SharedPreference {
      * @param state
      */
     public void setLoggedIn(boolean state) {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putBoolean(IS_LOGIN, state);
         editor.apply();
@@ -57,8 +58,7 @@ public class SharedPreference {
      * @return userCode
      */
     public String getUserId() {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         return preferences.getString(USER_ID, "");
     }
 
@@ -68,11 +68,22 @@ public class SharedPreference {
      * @param userCode
      */
     public void setUserId(String userCode) {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(USER_ID, userCode);
         editor.apply();
+    }
+
+    public void setCreatedByUserId(Integer createdByUserid) {
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt(CREATED_BY_USERID_KEY, createdByUserid);
+        editor.apply();
+    }
+
+    public int getCreatedByUserId() {
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        return preferences.getInt(CREATED_BY_USERID_KEY, 0);
     }
 
 
@@ -80,8 +91,7 @@ public class SharedPreference {
      * @return userName
      */
     public String getUserName() {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         return preferences.getString(USER_NAME, "");
     }
 
@@ -91,8 +101,7 @@ public class SharedPreference {
      * @param userName
      */
     public void setUserName(String userName) {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(USER_NAME, userName);
         editor.apply();
@@ -103,8 +112,7 @@ public class SharedPreference {
      * @return Token
      */
     public String getToken() {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         return preferences.getString(TOKEN, "");
     }
 
@@ -114,8 +122,7 @@ public class SharedPreference {
      * @param token
      */
     public void setToken(String token) {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(TOKEN, token);
         editor.apply();
@@ -126,8 +133,7 @@ public class SharedPreference {
      * @return userDeptName
      */
     public String getUserDeptName() {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         return preferences.getString(USER_DEPARTMENT_NAME, "");
     }
 
@@ -137,8 +143,7 @@ public class SharedPreference {
      * @param userDeptName
      */
     public void setUserDeptName(String userDeptName) {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(USER_DEPARTMENT_NAME, userDeptName);
         editor.apply();
@@ -165,8 +170,7 @@ public class SharedPreference {
      */
     /*public void setUserLoginResp(TidelLoginUserInfoResponse root) {*/
     public void setUserLoginResp(Login root) {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         Gson gson = new Gson();
         String json = gson.toJson(root);
@@ -178,8 +182,7 @@ public class SharedPreference {
      * @return accessToken
      */
     public String getAccessToken() {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         return preferences.getString(USER_ACCESS_TOKEN, "");
     }
 
@@ -189,8 +192,7 @@ public class SharedPreference {
      * @param accessToken
      */
     public void setAccessToken(String accessToken) {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(USER_ACCESS_TOKEN, accessToken);
         editor.apply();
@@ -222,8 +224,7 @@ public class SharedPreference {
      * Clear shared preference session
      */
     public void clearSession() {
-        SharedPreferences preferences = context.getApplicationContext()
-                .getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(COMMON_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.clear();
         editor.apply();

@@ -1,5 +1,4 @@
 package com.zebra.demo.data.remote.responsemodels;
-
 import java.util.List;
 
 public class PutAwayScanningResponse {
@@ -73,7 +72,6 @@ public class PutAwayScanningResponse {
         }
     }
 
-    // Nested MaterialItem class (for both Valid and Invalid lists)
     public static class MaterialItem {
         private int Packid;
         private int Detailid;
